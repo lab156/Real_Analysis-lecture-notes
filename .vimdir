@@ -1,0 +1,3 @@
+"I NORMALLY USE VIM TO EDIT MY FILES
+"THIS HELPS TO RUN pdflatex QUICK AND EASY
+map <Leader>a :w <bar> !pdflatex this_*.tex<CR>

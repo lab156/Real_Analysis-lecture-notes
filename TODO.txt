@@ -1,0 +1,2 @@
+Hay que cambiar las referencias [< folland 196 >] por algo que no moleste a
+latex 
