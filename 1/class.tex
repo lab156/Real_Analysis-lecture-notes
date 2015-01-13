@@ -1,1 +1,32 @@
-hola
+A lot of what we will see in this class is about Banach spaces. Banach spaces are complete normed vector spaces.
+
+\begin{ddef}[Equivalent Norms]
+We say $\Vert\ \Vert_1$ and $ \Vert\ \Vert_1$ are equivalent iff:
+$(\exists \ c,C>0)(\forall\ x\in V)$
+$$c\Vert x \Vert_1 \leq \Vert x \Vert_2 \leq C\Vert x\Vert_1$$
+\end{ddef}
+
+\begin{teorema}
+In $\RR^n$ (finite dimension) all $p$-norms are equivalent:
+$$|x|_\infty \leq |x|_p \leq |x|_1 \leq n|x|_\infty$$
+Note that $n$ is the best constant in this case.
+\end{teorema}
+
+\begin{remarks}
+    \begin{itemize}
+    \item On a Finite dimensional space, any two vector norms are equivalent.
+    \item A norm $\RR^n$ is uniquely determined by its \emph{unit ball} $B=\{x\from |x| \leq 1 \}$.
+    \end{itemize}
+\end{remarks}
+
+The following result specifies what are (all?) the possible unit balls:
+\begin{teorema}
+    If $B$ is any 0-symmetric \emph{Convex Body} in $\\R^n$, then $B$ is the unit ball for some norm.
+
+    (In this context, body means a compact with nonempty interior set.)
+    \begin{proof}
+        Note that the convexity is necessary, for example, to guaranty the triangle inequality. If $|x|,|y|\leq 1$ then convexity implies:
+        $$|(1-t)x+ty| \leq (1-t)|x| + t|y| \leq 1$$
+    \end{proof}
+\end{teorema}
+    
