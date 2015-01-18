@@ -1,0 +1,78 @@
+%14 Jan
+We have seen that $(\RR^n, \v\ \v)$ are Banach spaces for $1\leq p \leq \infty$. We will denote:
+\begin{itemize}
+ \item $\ell_p = \ell_p(\NN,\nu)$ where $\nu$ is the counting measure. 
+\item And for a function $f\in L_p(X,\mu)$ the norm is defined as:
+$$\v f \v_p = \left( \int |f|^p d\mu \right)^{1/p}$$ 
+For $\v f\v_\infty$ is the \emph{essential sup} i.e. the ``inf'' essential upper bound. (an essential upper bound is a number such that $f^{-1}([a,\infty[)$ has measure 0.)
+\end{itemize}
+It is easy to check the first two conditions for a norm in all the definitions above. For the triangle inequality and $p=2$ use Cauch-Swartz. Holder inequality will come afterwards.
+
+\begin{ddef}[The Space $c_0$]
+Briefly, $c_0$ is the space of all the 0-limit sequences. Usually given the max norm it becomes a subspace of $\ell_\infty$.
+$$c_0 \subset \ell_\infty = \{\{x_j\} \from \sup |x_j| < \infty \}$$
+\end{ddef}
+
+
+\begin{notation}
+Let $X$ be any set:
+\begin{itemize}
+\item $B(X)$ is the set of all bounded functions on $X$.
+\item $BC(X)$ is the set of all bounded continuous functions.
+\end{itemize}
+\end{notation}
+
+\begin{examples}
+Let's check that $\ell_\infty$ is complete. Assume $\{x_n \} \subset \ell_\infty$ is a Cauchy Sequence thus:
+$$\lim_{n,m\to \infty} |x_n - x_m|_\infty=0$$
+This means that the convergence $\{x_n \}\to 0$ is uniform. And for any $k$ the sequence $\{x_n(k) \}$ is Cauchy in $\RR$. Using the completeness of the reals, define $x_n(k) = y(k)$; this implies that $\v x_n - y \v_\infty$. To check that $y$ is indeed bounded, note the inequality: 
+$$\v y \v_\infty \leq \v x_n \v_\infty + \v x_n - y\v_\infty$$ 
+\end{examples}
+
+Before we check $c_0$ is complete, a lemma:
+\begin{lema}
+If $X$ is a complete metric space and $A\subset X$ is closed, then $A$ is complete.
+\begin{proof}
+Take a Cauchy sequence in $A$, since $X$ is complete it converges to a limit point of $A$. Using that $A$ is closed in $X$ we are done.
+\end{proof}
+\end{lema}
+And a corollary:
+\begin{corol}
+Let $X$ be a Banach space and $Y$ a subspace, then $Y$ is Banach iff it is closed.
+\begin{proof}
+Assume $Y$ is Banach, and let $y$ any limit point of $Y$ in $X$; note that there must be a sequence in $Y$ that converges to it. Since the topology is given by the norm, the sequence turns out to be Cauchy.
+\end{proof}
+\end{corol}
+
+\begin{examples}
+Note that $c_0$ is Banach because it is closed in $\ell_infty$. To prove it is closed take $\{x_n \}\subset c_0$ and suppose that $\{x_n \}\to y\in \ell_infty$
+$$\lim_{k\to\infty} \left(\lim_{n\to\infty} x_n(k) \right)=\lim_{k\to \infty} y(k)$$
+we have uniform convergence since $(\forall \epsilon)(\exists N)(\v x_n - y\v_\infty\to 0)$ so we can switch the limits:
+$$\lim_{n\to\infty} \left(\lim_{k\to\infty} x_n(k) \right)=\lim_{k\to \infty} y(k)=0$$
+Note that uniform convergence is necessary, for if we consider the sequence $x_n \in c_0$ 
+$$x_n = ( \underbrace{1,1,1,1}_{n\ 1s},  0,0,0,\ldots)$$
+This sequence does not converge in the max norm since $\v x_n - y \v_\infty= 1$. On the other hand, it does converge pointwise.
+
+In an alternate interpretation, $c_0$ is closed in the \textbf{box topology} but not in the \textbf{product topology}
+\end{examples}
+
+\begin{teorema}
+    Let $X$ be a complete space, then:
+    \begin{itemize}
+        \item $B(X)$ is also complete (same proof as for $\ell_\infty$).
+        \item $BC(x)$ is a closed subspace with the infinity norm (uniform topology) and thus complete.
+    \end{itemize}
+    \begin{proof}
+        To see the second one, let $f_n \to f$ uniformly, then we know $f$ is also continuous.
+    \end{proof}
+\end{teorema}
+
+\begin{teorema}
+    A normed space $\vesp$ is complete iff every absolutely convergent series in $\vesp$ converges.
+    \begin{proof}
+       Assuming $\vesp$ is complete and that $x_n$ is absolutely convergent, take the partial sums $s_n=\sum x_j$. $s_n$ form a Cauchy sequence and thus converge.
+
+       On the other hand, now assume that every absolutely convergent sequence converges and take any Cauchy sequence $x_n$. Construct a  subsequence such that $\v x_{n_j} - x_{n_{j+1}}\v < 2^{j}$. Being bounded this way, the succesive terms of this subsequence $y_j=x_{n_j} - x_{n_{j+1}}$ form an absolutely convergente sequence; and under the current assumptions, converge. Finally, note that $\sum y_j$ telescopes to $x_{n_k}$.
+        @@folland 152@@
+    \end{proof}
+\end{teorema}
