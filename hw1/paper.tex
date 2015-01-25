@@ -1,13 +1,22 @@
 \begin{description}
-    \item[Problem 1] Usually $\vesp\times \vesp$ is given the product topology, which is given by the norm $\max(|v_1|,|v_2|)$, for instance. Now, let $epsilon>0$; take $\delta=\epsilon/2$, then $\forall \, x,y\in \vesp$ let's denote $z=x+y$ we see:
-    $$    \max(|x-x_0|,|y-y_0|) < \epsilon/2 \implies |z-z_0|< \epsilon $$.
+    \item[Problem 1] Usually $\vesp\times \vesp$ is given the product topology, which is given, for instance, by the norm $\max(\Vert v_1\Vert,\Vert v_2\Vert)$. Now, let $epsilon>0$; take $\delta=\epsilon/2$, then $\forall \, x,y\in \vesp$ let's denote $z=x+y$ we see:
+    $$    \max(\Vert x-x_0\Vert,\Vert y-y_0\Vert) < \epsilon/2 \implies \Vert z-z_0\Vert< \epsilon $$.
     Note that this is \emph{uniform continuity}.
 
-    For the scalar multiplication of $a\in K$ and for $\epsilon>0$ take $\delta=\epsilon/a$.
+    For the scalar multiplication of $a\in K$ and for $\epsilon>0$ take $\delta=\epsilon/|a|$. For all $x, y \in \vesp$:
+    $$\Vert x -  y\Vert < \delta \implies \Vert a\, x - a\, y \Vert < \epsilon$$ 
 
     To prove that $|\Vert x \Vert - \Vert y \Vert | \leq \Vert x-y\Vert$, note that 
     $$\Vert x + y -y \Vert \leq \Vert x+ y\Vert + \Vert y \Vert$$
     this gives $\Vert x\Vert - \Vert y \Vert \leq \Vert x-y\Vert$, reversing the argument gives the other order.
 \item[Problem 5] Let the subspace be denoted $A$ and its closure by $\bar A$. For all $x,y \in \bar A$; there are  sequences $\{x_i\},\ \{y_i\}\subset A$ converging to $x,y$ respectively. This means that both $ax$ and $x+y$ are in $ \bar A$ since $\{x_i+ y_i\}\to x+y$ and $a\, x_i \to a\, x$. Also note we proved these two operations are continuous above.
-    \item[Problem 13] We  need to check two things: that $\Vert x\Vert=0$ implies that $x\in \MM$ and that the norm is well-defined. Starting with the latter, note that if $x~y$ then there exists $z\in \MM$ such that $x=y+z$. Thus, $\Vert x\Vert \leq \Vert y\Vert$ and $\Vert y\Vert \leq \Vert x\Vert$.
+    \item[Problem 13] We  need to check two things: that $\Vert x\Vert=0$ implies that $x\in \MM$ and that the norm is well-defined. Starting with the latter, note that if $x\simeq y$ then there exists $z\in \MM$ such that $x=y+z$. Thus, by the triangle inequality: $\Vert x\Vert \leq \Vert y\Vert$ and $\Vert y\Vert \leq \Vert x\Vert$.
+
+        Secondly, to check that $\Vert \cdot \Vert$ separates points (which in this case are cosets); note that, by definition,  $\Vert x\Vert=0$ implies that $x$ is in $\MM$.
+        
+        The other two conditions are a consequence of $\Vert \cdot \Vert$ being a seminorm. To check, for any $x,y\in \vesp$ and calling $\Vert x+\MM \Vert$ the unique value of the seminorm in all the coset:
+        $$\Vert ax+\MM\Vert = \Vert ax\Vert = |a|\Vert x\Vert$$
+        And the triangle inequality:
+        $$\Vert x+y +\MM \Vert = \Vert x+y \Vert \leq \Vert x\Vert + \Vert y \Vert$$
+        each of the last two summands being equal to $\Vert x+\MM\Vert$ and $\Vert y+\MM\Vert$ respectively.
 \end{description}
