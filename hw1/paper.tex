@@ -1,0 +1,46 @@
+\noindent\textbf{Real Analysis II Assignment 1 \hspace{\fill} Luis Berlioz}
+
+ \noindent \textbf{Problem 1} Usually $\vesp\times \vesp$ is given the product topology, which is given, for instance, by the norm $\max(\Vert v_1\Vert,\Vert v_2\Vert)$. Now, let $\epsilon>0$; take $\delta=\epsilon/2$, then $\forall \, x,y\in \vesp$ let's denote $z=x+y$ we see:
+    $$    \max(\Vert x-x_0\Vert,\Vert y-y_0\Vert) < \epsilon/2 \implies \Vert z-z_0\Vert< \epsilon $$
+    Note that this is \emph{uniform continuity}.
+
+    For the scalar multiplication of $a\in K$ and for $\epsilon>0$ take $\delta=\epsilon/|a|$. For all $x, y \in \vesp$:
+    $$\Vert x -  y\Vert < \delta \implies \Vert a\, x - a\, y \Vert < \epsilon$$ 
+
+    To prove that $|\Vert x \Vert - \Vert y \Vert | \leq \Vert x-y\Vert$, note that 
+    $$\Vert x + y -y \Vert \leq \Vert x+ y\Vert + \Vert y \Vert$$
+    this gives $\Vert x\Vert - \Vert y \Vert \leq \Vert x-y\Vert$, reversing the argument gives the other order.\\[1em]
+
+
+    \noindent\textbf{Problem 5} Let the subspace be denoted $A$ and its closure by $\bar A$. For all $x,y \in \bar A$; there are  sequences $\{x_i\},\ \{y_i\}\subset A$ converging to $x,y$ respectively. This means that both $ax$ and $x+y$ are in $ \bar A$ since $\{x_i+ y_i\}\to x+y$ and $a\, x_i \to a\, x$. Also note we proved these two operations are continuous above.\\[1em]
+    \noindent\textbf{Problem 8} We check each part of the definition:
+    \begin{description}
+        \item[non-negativity:] Let $\nu$ be a complex measure such that $\Vert \nu \Vert=0$. Then for any \emph{measurable} subset  $T\in \MM$ (Proposition 3.13):
+            $$| \nu(T) | \leq |\nu|(T)=0$$
+            
+        \item[homogeneity:] For any complex measure $\nu$ and any $\alpha\in\CC$, there is a measure $\mu$ and a measurable function $\alpha f\in L^1(\mu)$ such that:
+            $$\Vert \alpha \mu \Vert = |\alpha\mu|(\vesp) = \left|\int_\vesp \alpha f\, d\mu\right|=|\alpha|\left|\int_\vesp  f\, d\mu\right|$$
+        \item[triangle inequality:] This is Proposition 3.14 of the textbook; evaluating the norm in $\vesp$ i.e.
+            $$\Vert \nu+\mu \Vert = |\nu +\mu|(\vesp)\leq |\nu|(\vesp) +|\mu|(\vesp) = \Vert \nu\Vert +\Vert \mu\Vert$$
+    \end{description}
+    The last part is to show that given an absolutely convergent series always converges to a complex measure.
+    $$\sum_i\Vert \nu_i\Vert <\infty \implies \sum_i \nu_i \in M(\vesp)$$
+    To show that $\sum_i \nu_i(\emptyset)=0$ is easy since all $\nu_i(\emptyset)=0$.
+
+    Additivity, on the other hand, will require more work. First, let $E$ be any measurable set, absolute convergence guarantees us that:
+    $$\left|\sum_{i=1}^\infty \nu_i(E)\right|\leq \sum_{i=1}^\infty |\nu_i|(E)\leq \sum_{i=1}^\infty \Vert \nu_i \Vert<\infty$$
+    We define the limit of the leftmost term as $\nu(E) = \sum_{i=1}^\infty \nu_i(E)$. Note that the partial sum $\nu_n(E) = \sum_{i=1}^n \nu_i(E)$ is a measure by Proposition 3.11. 
+
+    Finally, need to show that if $E=\cup_j E_j$ (where the $E_j$ are disjoint, denumerable and measurable sets) then: $\nu(\cup_j E_j)= \sum_j \nu(E_j)$. To check: 
+    $$\sum_{i=1}^\infty \nu_i(E)=\sum_{i=1}^\infty \nu_i(\cup_j E_j)=\sum_{i=1}^\infty \sum_{j=1}^\infty \nu_i(E_j)$$
+    We can ``switch the limits'' since $\sum_i^N \nu_i(E_j) \xrightarrow{\text{unif}} \nu(E_j) $.\\[1em]
+
+\noindent\textbf{Problem 13} We  need to check two things: that $\Vert x\Vert=0$ implies that $x\in \MM$ and that the norm is well-defined. Starting with the latter, note that if $x\simeq y$ then there exists $z\in \MM$ such that $x=y+z$. Thus, by the triangle inequality: $\Vert x\Vert \leq \Vert y\Vert$ and $\Vert y\Vert \leq \Vert x\Vert$.
+
+        Secondly, to check that $\Vert \cdot \Vert$ separates points (which in this case are cosets); note that, by definition,  $\Vert x\Vert=0$ implies that $x$ is in $\MM$.
+        
+        The other two conditions are a consequence of $\Vert \cdot \Vert$ being a seminorm. To check, for any $x,y\in \vesp$ and calling $\Vert x+\MM \Vert$ the unique value of the seminorm in all the coset:
+        $$\Vert ax+\MM\Vert = \Vert ax\Vert = |a|\Vert x\Vert$$
+        And the triangle inequality:
+        $$\Vert x+y +\MM \Vert = \Vert x+y \Vert \leq \Vert x\Vert + \Vert y \Vert$$
+        each of the last two summands being equal to $\Vert x+\MM\Vert$ and $\Vert y+\MM\Vert$ respectively.\\[1em]
