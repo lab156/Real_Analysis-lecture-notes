@@ -1,0 +1,51 @@
+Remember that in $\RR^n$ to define a norm is equivalent to define a unit ball.
+
+\subsection{Norm on product of Vector Spaces}
+\begin{examples}
+The norm on the space $\vesp\times \vespy$ can be defined by:
+\begin{align*}
+\v (x,y) \v &= \max\{\v x\v + \v y \v\}\\
+            &= \left(\v x\v^2 + \v y \v^2\right)^(1/2)\\
+            &= \v x \v + \v y \v
+\end{align*}
+\end{examples}
+
+Let $T\from \vesp \to \vespy$ be a linear operator; then $\v T\v \leq \lambda \iff TB_\vesp\subset \lambda B_\vespy=B(0,lambda)$.
+
+\begin{remarks}
+Remember that Continuous linear is equivalent to bounded.
+
+Let $T\from \vesp \to \vespy$ be a bijection; then $T^{-1}$ is continuous when there exists a constant $c>0$ (named for the small $c$ in the definition of equivalent norms) such that for all $x\in vesp$,
+$$c\v x\v \leq \v Tx\v$$
+This is the opposite order that is used when proving that bounded linear implies continuous.
+\end{remarks}
+
+\begin{ddef}[Quotient of Spaces]
+$\vesp$ normed spaces $\MM\subset \vesp$ is a subspace.
+$$\vesp/\MM= \left\{ x+ \MM \from \forall x\in \vesp\right\}$$
+\end{ddef}
+\begin{remarks}
+Two way to ``think'' about the quotient spaces:
+\begin{itemize}
+\item The set of affine spaces; that is, the elements are all the parallel spaces to $\MM$.
+\item Also equivalent to the intersection with the complementary (orthogonal) subspace.
+\end{itemize}
+\end{remarks}
+
+\begin{ddef}[Norm of the Quotient Space]
+The norm of $y \in \vesp/\MM$ is:
+$$\v y\v= \inf_{m\in \MM} \v x+m\v$$
+\end{ddef}
+
+\begin{corol}
+\begin{enumerate}
+\item The canonical projection $\pi\from \vesp \to \vespy$ has norm $\v x\v =1$.\item $U\subset \vesp/\MM$ is open iff $\pi^{-1}(U)$ is open.
+\end{enumerate}
+\end{corol}
+
+\begin{teorema}
+$\vesp$ is complete iff $\vesp/\MM$ is complete.
+\begin{proof}
+Use the absolute convergence and Cauchy criterion.
+\end{proof}
+\end{teorema}
