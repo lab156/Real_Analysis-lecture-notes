@@ -1,27 +1,27 @@
 \problem{7}
 \begin{enumerate}[(a)]
 \item First we establish the following property:
-$$T\sum_{n=0}^N (I-T)^n = \left(\sum_{n=0}^N (I-T)^n\right)= I-(I-T)^{N+1}$$
-to avoid dealing with the powers of $(I-T)$ we will temporarly rename it like so $S= I-T$. Thus
+$$T\sum_{n=0}^N (I-T)^n = \left(\sum_{n=0}^N (I-T)^n\right)T= I-(I-T)^{N+1}$$
+to avoid dealing with the powers of $(I-T)$ we will temporarily rename it like so $S= I-T$. Thus
 \begin{align*} 
-(I-S)\sum_{n=0}^N S^n &= I+S+S^2+S^3+S^4+\ldots + S^N\\
-            &=\phantom{I}-S-S^2-S^3-S^4-\ldots -S^N-S^{N+1}\\
+    (I-S)\sum_{n=0}^N S^n &= I+S+S^2+S^3+S^4+\ldots + S^N\\[-1em]
+            &\phantom{=I}-S-S^2-S^3-S^4-\ldots -S^N-S^{N+1}\\
             &=I-S^{N+1}
 \end{align*}
 Now, since $\vesp$ is complete, it means that $L(\vesp,\vesp)$ is also complete. 
 We will use this to show that $\sum_{n=0}^N (I-T)^n$ converges in $L(\vesp,\vesp)$.
-Indeed note that $\v(I-T)^n\v\leq \v I-T\v^n$, this means:
+Indeed, note that $\v(I-T)^n\v\leq \v I-T\v^n$, this means:
 $$\sum_{n=0}^\infty \v(I-T)^n\v \leq \sum_{n=0}^\infty \v I-T\v^n=\frac 1{1-\v I-T\v}<\infty$$
 And this absolute convergence implies $\sum_{n=0}^\infty (I-T)^n\in L(\vesp,\vesp)$.
 
 To show that $T$ and $\sum_{n=0}^\infty (I-T)^n$ are each other's inverse we check that their composition is the identity:
 $$\left(T\sum_{n=0}^\infty (I-T)^n\right)x=\lim_{N\to \infty} \left(T\sum_{n=0}^N (I-T)^n\right)x= \lim_{N\to\infty} x-(I-T)^{N+1}x=x$$
 The same is true ``mutatis mutandis'' for $\left(\sum_{n=0}^\infty (I-T)^n\right)T$.
-The last equality since $ \v(I-T)^{N+1}x\v leq \v I-T\v^{N+1}x\v\to 0$ as $N\to \infty$.
+The last equality since $ \v(I-T)^{N+1}x\v \leq \v I-T\v^{N+1}x\v\to 0$ as $N\to \infty$.
 
 \item According to the hypothesis:
 $$\v T^{-1}S-I\v \leq \v T^{-1}\v \v S-T\v <1$$
-Idem for $ST^{-1}$.
+Idem if we factor on the other side $ST^{-1}$.
 Then, by the preceding result $ST^{-1}$ is invertible. 
 
 Now we prove that $S$ is onto, injective and bounded. 
@@ -29,10 +29,14 @@ To see $S$ is one to one, take any two $x,y\in\vesp$ such that:
 $$Sx= Sy$$
 We can multiply $T^{-1}$ on both sides,
 $$T^{-1}Sx=T^{-1}Sy$$
-And since $T^{-1}S$ is invertible, $x=y$.
+And, since $T^{-1}S$ is invertible, $x=y$.
 
 Showing that $S$ is surjective is simple: For any $x\in \vesp$ there is a $y\in\vesp$ such that 
 $$x=T(T^{-1}Sy)=Sy$$
 
-Finally, it checks that $S^{-1}$ is a linear map, to check it is bounded, 
+Finally, it checks that $S$ is a linear map, to show it is bounded from above:
+$$\v Sx \v = \v ST^{ -1}Tx\v \leq \v ST^{ -1}\v \v T\v \v x\v$$
+And bounded from below:
+$$\v x \v = \v \left( T^{-1} S\right)^{-1}\left(T^{-1}S\right)x\v\leq \v(T^{-1}S)^{-1}\v \v T^{-1}\v \v Sx\v$$
+
 \end{enumerate}
