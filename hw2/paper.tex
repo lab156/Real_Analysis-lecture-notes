@@ -34,9 +34,36 @@ And, since $T^{-1}S$ is invertible, $x=y$.
 Showing that $S$ is surjective is simple: For any $x\in \vesp$ there is a $y\in\vesp$ such that 
 $$x=T(T^{-1}Sy)=Sy$$
 
-Finally, it checks that $S$ is a linear map, to show it is bounded from above:
+Finally, we check that $S$ is bounded from above:
 $$\v Sx \v = \v ST^{ -1}Tx\v \leq \v ST^{ -1}\v \v T\v \v x\v$$
 And bounded from below:
 $$\v x \v = \v \left( T^{-1} S\right)^{-1}\left(T^{-1}S\right)x\v\leq \v(T^{-1}S)^{-1}\v \v T^{-1}\v \v Sx\v$$
 
+\end{enumerate}
+
+\problem{15}
+\begin{enumerate}[(a)]
+    \item Take any two elements $x,y\in\NNN(T)$. The set $\NNN(T)$ is closed under sum and scalar multiplication since:
+        $$T(\alpha x +\beta y ) = \alpha T(x) + \beta T(y) = 0$$
+        The kernel or \emph{null space} of $T$ is also closed when $T$ is continuous. 
+        To see this, take any element of the closure $\bar x \in \bar{\NNN(T)}$.
+        Then since $\vesp$ is convex (being a vector space); there is a sequence $\{x_n\}\in \vesp$ such that $x_n\to \bar x$ such that:
+        $$\lim_{n\to \infty} T(x_n) = T(\bar x)$$
+        Since we know $T(x_n)=0$ for all $x_n$ by assumption; the limit is clearly 0.
+    \item First we prove that $S$ is well-defined. 
+        Note that $\pi\from \vesp \to \vesp/\NN(T)$ is a surjective linear map. 
+        This means that any  equivalence class in $\NN(T)$ can be written as $\pi(x)$ some $x\in \vesp$.
+        Take any two equivalent elements $\pi(x) =\pi(x')$; then we see that $S\pi(x) - S\pi(x') = T(x)-T(x')=T(x-x')=0$ since $x-x'\in \NNN(T)$.
+
+        $S$ is linear since $S\pi(\alpha x) = T(\alpha x)= \alpha T(x) = \alpha S\pi(x)$ and:
+        $$S(\pi(x)) + S(\pi(y))= T(x) + T(y) = T(x+y) = S\pi(x+y) = S(\pi(x) + \pi(y))$$
+        And $S$ is unique because it is completely determined by $T$. 
+        If, for the sake of contradiction, we assume that there is $S\neq S'$, this means there exists $\pi(x)$ such that:
+        $$S\pi(x) \neq S'\pi(x) \text{ and } S\pi(x) = T(x) = S'\pi(x)$$
+
+        To prove that $\v S \v = \v T\v$, first:
+        $$\v T \v = \v S\circ \pi\v \leq \v S \v $$
+        Since $\v pi \v= 1$ as proven in class. On the other hand:
+        $$\frac{\v S\pi (x)\v}{\v \pi x\v}\leq \frac{\v S\pi (x)\v}{\v  x\v}$$
+        $$\sup_{ x \neq 0}\frac{\v Tx\v}{\v x\v}\leq $$
 \end{enumerate}
