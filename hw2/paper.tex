@@ -47,12 +47,12 @@ $$\v x \v = \v \left( T^{-1} S\right)^{-1}\left(T^{-1}S\right)x\v\leq \v(T^{-1}S
         $$T(\alpha x +\beta y ) = \alpha T(x) + \beta T(y) = 0$$
         The kernel or \emph{null space} of $T$ is also closed when $T$ is continuous. 
         To see this, take any element of the closure $\bar x \in \bar{\NNN(T)}$.
-        Then since $\vesp$ is convex (being a vector space); there is a sequence $\{x_n\}\in \vesp$ such that $x_n\to \bar x$ such that:
+        Then since $\vesp$ is connected (being a vector space); there is a sequence $\{x_n\}\in \vesp$ such that $x_n\to \bar x$ such that:
         $$\lim_{n\to \infty} T(x_n) = T(\bar x)$$
         Since we know $T(x_n)=0$ for all $x_n$ by assumption; the limit is clearly 0.
     \item First we prove that $S$ is well-defined. 
-        Note that $\pi\from \vesp \to \vesp/\NN(T)$ is a surjective linear map. 
-        This means that any  equivalence class in $\NN(T)$ can be written as $\pi(x)$ some $x\in \vesp$.
+        Note that $\pi\from \vesp \to \vesp/\NNN(T)$ is a surjective linear map. 
+        This means that any  equivalence class in $\NNN(T)$ can be written as $\pi(x)$ some $x\in \vesp$.
         Take any two equivalent elements $\pi(x) =\pi(x')$; then we see that $S\pi(x) - S\pi(x') = T(x)-T(x')=T(x-x')=0$ since $x-x'\in \NNN(T)$.
 
         $S$ is linear since $S\pi(\alpha x) = T(\alpha x)= \alpha T(x) = \alpha S\pi(x)$ and:
@@ -63,7 +63,19 @@ $$\v x \v = \v \left( T^{-1} S\right)^{-1}\left(T^{-1}S\right)x\v\leq \v(T^{-1}S
 
         To prove that $\v S \v = \v T\v$, first:
         $$\v T \v = \v S\circ \pi\v \leq \v S \v $$
-        Since $\v pi \v= 1$ as proven in class. On the other hand:
-        $$\frac{\v S\pi (x)\v}{\v \pi x\v}\leq \frac{\v S\pi (x)\v}{\v  x\v}$$
-        $$\sup_{ x \neq 0}\frac{\v Tx\v}{\v x\v}\leq $$
+        Since $\v \pi \v= 1$. To check this last remark, first we note that in the \emph{unit ball} of $\vesp$ we always have $\v \pi (x)\v\leq 1$. To check the other inequality; let $\v x\v=1$ then for any $\epsilon > 0$ there exists $\pi( x') =\pi(x)$ such that:
+        $$1\leq \v x' \v < \v \pi(x) \v +\epsilon$$
+        This is because after adding $\epsilon$ to $\v \pi(x) \v$ it is no longer the infimum anymore; so their is room to slide $x'$ in the middle. We are done once we notice that $1-\epsilon < \v \pi(x) \v\leq 1$ which implies $\v \pi\v=1$.
+
+        We will prove the second half, namely that $\v T \v \geq \v S\v$ using a similar argument. For all $\epsilon>0$ there is $\pi x_\epsilon\in \vesp/\NN$ such that $\v \pi x_\epsilon\v =1$ and:
+        $$\v S\v -\epsilon < \v S \pi x_\epsilon\v=\v Tx_\epsilon \v\leq (1+\epsilon)\v T\v$$
+        In the last inequality we used that there exists $\pi x'_\epsilon = \pi x_\epsilon $ such that $1\leq \v x'_\epsilon \v \leq 1+\epsilon$.
 \end{enumerate}
+
+
+\problem{17}
+Assume first that $f$ is bounded, then the hypothesis of problem 15 are satisfied. That is, $\vesp$ and $\RR$ are normed vector spaces and $f\in L(\vesp, \RR)$. Then by part (a) we know that $f^{-1}(0) = \{ x\in \vesp \from f(x) =0 \}$ is a closed subspace of $\vesp$.
+
+On the other hand, if we assume that $f^{-1}(0)$ is a closed subspace, we use the usual norm on $\vesp/f^{-1}(0)$:
+$$\v x+f^{-1}(0)\v = \inf_{m\in f^{-1}(0)}\v x + m\v$$
+We will show that $f$ is continuous at 0. Suppose $f$ is not the zero functional (in any, case $f=0$ is continuous). Then we have $f(x)=1$ for some $x\in\vesp$. Also, for every $\epsilon >0$ there exists $x'$ such that $x'=x+m$ with $m\in f^{-1}(0)$ and $\v x' \v > 1 - \epsilon$. Then take $\delta = \epsilon$.
