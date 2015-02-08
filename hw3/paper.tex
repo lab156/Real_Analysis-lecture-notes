@@ -1,0 +1,50 @@
+\problem{18}
+\subsection*{Part \textbf{a.}}
+As hinted in the problem, we use Theorem 5.8a. in the textbook to find a linear functional $f\from \vesp \to \CC$ such that $\v f\v=1$, $f(\MM)=0$, and $f(x)=\delta>0$.
+
+Next we show (it's probably unnecessary) that when $x\notin \MM$ then the $\MM + \CC x$ is a direct sum, namely: $\MM \oplus \CC x$. 
+Showing that $\MM\cap \CC x$ is simple: take $m+zx\in \MM \cap \CC x$, then, 
+$$f(m+zx)=z\delta =0$$
+Thus $z=0$. Note that here need to use that $\delta>0$.
+
+Now, take two elements that happen to add up to the same vector:
+$$m+zx = m'+z' x$$
+where $m,m' \in \MM$ and $z,z'\in \CC$. 
+Evaluating $f$ on both sides cancels the $\MM$ component and all that is left is $z=z'$. 
+This implies that $m=m'$.
+
+To prove that $\MM+\CC x$ is closed as a subspace of $\vesp$; we will take any one of its limit points and show it is inside the subspace.
+Take $\alpha \in \vesp$ such that it is a limit point of $\MM+\CC x$.
+Then we have a sequence $\{\alpha_n \}\subset \MM+\CC x$ such that $\alpha_n \to \alpha$.
+Since $\v f\v=1$ and thus continuous:
+$$f(\alpha) = \lim_{n\to \infty} f(\alpha_n)= \lim_{n\to \infty} z_n \delta = z\delta$$
+Every $\alpha_n = m_n = z_n x$, where the components are unique, by the direct sum result above. 
+Then $\alpha_n - z_n x$ tends to some vector that we call $m$. 
+All that is left is to show $m\in \MM$; this is easy as $f(\alpha_n - z_n x) =0$
+
+\subsection*{Part \textbf{b.}}
+We start with the base case $\MM_0 =\{0\}$, which is closed as all points are in a Haussdorff space.
+By the result in part (a): for any $n$ such that $\MM_n$ is $n$-dimensional and closed; if there is an $x$ such that:
+$$\delta=\inf_{y\in \MM_n}\v x+y\v>0$$
+then we can make the \emph{closed} $(n+1)$-dimensional subspace $\MM_{n+1}=\MM_n + \CC x$. 
+And for the finite dimensional case we can always find such an $x$ just taking any unused element in the basis.
+
+\problem{19}
+\subsection*{Part \textbf{a.}}
+Take $x_0=0 $ and define $\MM_0= \{0\}$ which is a closed subspace of $\vesp$.
+For any $n\in \NN$, assume that $\MM_{n} $ is a closed subspace; then taking $\epsilon = 1/2$, we already know there
+exists $x_{n+1}\in \vesp$ such that:
+$$\v x_{n+1}\v = 1 \text{ and } \v x_{n+1} + \MM_n \v \geq 1-1/2$$
+and to keep up with the inductive definition, we also set $\MM_{n+1} = \MM_n+\CC x_{n+1}$.
+
+The process above produce the desired sequence because: 1) All $x_n$ are taken from the $\vesp$'s unit ball.
+And, 2) for any $x_j,x_k$ assume $j>k$; then, $x_k \in \MM_k$ by definition, and $\MM_k\subset \MM_j$ thus:
+$$\v x_j - x_k\v\geq \inf_{y\in \MM_{k}}\v x_j -y \v \geq \inf_{y\in \MM_{j-1}} \v x_j -y\v \geq 1/2$$
+
+\subsection*{Part \textbf{b.}}
+We argue by contradiction:
+Suppose $\vesp$ is locally compact and infinite dimensional. 
+Then, by the definition of a locally compact space we know that there is compact set $K$ that contain an open ball around the origin of radius $\epsilon>0$, namely:
+$$0\in B_0(\epsilon) \subset K$$
+If we now take the sequence contructed above and scale it to the $\epsilon$-radius ball, then $\{\epsilon x_j \}$ are a sequence contained inside $K$ that have no converging subsequences (no two elements ever get closer than $\frac 12 \epsilon$).
+Thus contradicting that $K$ is compact. 
