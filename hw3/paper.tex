@@ -68,5 +68,10 @@ Then, for all $x\in \vesp$ we have:
 $$(fT)x= (f'T)x$$
 Since the range of $T$ is dense, for all $y\in\vespy$ there exists $\{x_n\}$ such that $Tx_n \to y$. Thus, using the continuity of the elements in $\vespy^*$,
 $$ fTx_n \to fy = f'y \leftarrow f'Tx_n$$
-Since $y$ was chosen arbitrarily, this means that $f=f'$, which implies that $T^\dagger $ is one-to-one.
+Note that $y$ was chosen arbitrarily, this means that $f=f'$, which implies that $T^\dagger $ is one-to-one.
 
+Conversely, suppose that $T^\dagger $ is injective. This implies that for $f\neq 0$ we must have $T^\dagger f\neq 0$. This last non-equality implies there exists $x\in\vesp$ such that $f(Tx)\neq 0$ and thus $Tx\neq 0$. Without loss of generality we may assume $Tx=1$. What is important is that now we can show that the range of $T$ is dense around $0\in \vespy$ since we can take the sequence $\{Tx/n\}$ for all $n\in \NN$. For an arbitrary point  $y \in \vespy$ and some point $Tx\neq y$; translate to $0$ and $Tx-y$ respectively. With this we are in the same situation as before, since, there exists $y^*\in \vespy^*$ such that:
+$$y^*(Tx-y) = \delta>0$$
+As before, this implies $T^\dagger y^*\neq 0$ and there exists $x_1\in \vesp$ such that 
+$$(T^\dagger y^*)x_1 =1$$
+Which gives the desired result.
