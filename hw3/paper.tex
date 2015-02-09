@@ -20,7 +20,7 @@ Since $\v f\v=1$ and thus continuous:
 $$f(\alpha) = \lim_{n\to \infty} f(\alpha_n)= \lim_{n\to \infty} z_n \delta = z\delta$$
 Every $\alpha_n = m_n = z_n x$, where the components are unique, by the direct sum result above. 
 Then $\alpha_n - z_n x$ tends to some vector that we call $m$. 
-All that is left is to show $m\in \MM$; this is easy as $f(\alpha_n - z_n x) =0$
+All that is left is to show $m\in \MM$; this is easy as $f(\alpha_n - z_n x) =0$ for all $n$.
 
 \subsection*{Part \textbf{b.}}
 We start with the base case $\MM_0 =\{0\}$, which is closed as all points are in a Haussdorff space.
@@ -56,8 +56,17 @@ $$T^\dagger (\alpha f+\beta g)= (\alpha f+ \beta g) \circ T = \alpha T^\dagger f
 To check that $T^\dagger $ is bounded, first we have:
 $$\v T^\dagger f \v = \v f\circ T \v \leq \v f\v \v T\v $$
 Thus $\v T^\dagger \v \leq \v T\v$. On the other hand:
-$$\v T^\dagger \v  = \sup_{\v f\v =0} \v T^\dagger f \v$$
+$$\v T^\dagger \v  = \sup_{\v f\v =1} \v T^\dagger f \v$$
 Since $T^\dagger f$ is an element of $\vesp^*$ it has the dual norm:
-$$\v T^\dagger \v  = \sup_{\v f\v =0} \left\{ \sup_{\v x\v =1} \v (T^\dagger f)x\v \right\}$$
+$$\v T^\dagger \v  = \sup_{\v f\v =1} \left\{ \sup_{\v x\v =1} \v (T^\dagger f)x\v \right\}$$
 For every $Tx\neq 0$ by the Hahn-Banach Theorem, we know there exists $\v f_0 \v =1$ such that $f_0(Tx) = \v T x\v$. Then relaxing the first supremum above:
-$$\leq \sup_{\v x\v =1} \v Tx\v = \v T \v$$
+$$\geq \sup_{\v x\v =1} \v f_0\v \v Tx\v =\sup_{\v x\v =1} \v Tx\v = \v T \v$$
+\subsection*{Part \textbf{b.}}
+First, let us assume that $T\vesp$ is dense in $\vespy$. Take any two $f,f'\in \vespy^*$ such that:
+$$T^\dagger f = T^\dagger f'$$
+Then, for all $x\in \vesp$ we have:
+$$(fT)x= (f'T)x$$
+Since the range of $T$ is dense, for all $y\in\vespy$ there exists $\{x_n\}$ such that $Tx_n \to y$. Thus, using the continuity of the elements in $\vespy^*$,
+$$ fTx_n \to fy = f'y \leftarrow f'Tx_n$$
+Since $y$ was chosen arbitrarily, this means that $f=f'$, which implies that $T^\dagger $ is one-to-one.
+
