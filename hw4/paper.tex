@@ -1,4 +1,28 @@
+\noindent\textbf{Real Analysis II Assignment 4 \hspace{\fill} Luis Berlioz}
 \problem{27}
+First, we detail the contruction of a Generalized Cantor Set of measure 1/2. These sets have measure:
+$$m(C) = \prod_k (1-\alpha_k)$$
+Taking $\alpha_k= (2^k+2)^-1$, we get:
+\begin{align*}
+\prod_{k=1}^N \left( 1- \frac 1{2^k+2} \right) &= \frac 34 \cdots \frac{2^k+1}{2(2^{k-1} +1)}\frac{2^{k+1}+1}{2(2^{k} +1)}\frac{2^{k+2}+1}{2(2^{k+1} +1)} \cdots \frac{2^N+1}{2^N+2}\\
+                                &= \frac{2^N+1}{2^{N+1}} \to \frac 12
+\end{align*}
+Starting with the interval [0,1]  we remove the \emph{open} middle segment of length $1/2^{2n}$. 
+The resulting set $C$ is closed because its the intersection of closed sets; thus it is measurable. 
+It is also nowhere-dense, since for any two points in $C$, the distance between them is greater than $1/2^{2k}$ for some $k$.
+And according to the definition, an open segment of this length necesarily was removed. 
+
+Now we argue that the gaps of $C$ can be filled in with scaled down copies of $C$. 
+For convenience call $\frac 14 C$ the copy of $C$ scaled down by a factor of 1/4.
+Then the biggest gap of $C$ (which has length 1/4) can be half-filled by $1/4C$.
+Also, the two gaps of size 1/16 and in the general case, the $2^{n-1}$ gaps of size $2^{2n}$. 
+Note that the gap's measure is $$1/2 = \sum_{k=1} \frac{2^{k-1}}{2^{2k}}$$
+And filling up each one individually fills up half of the space unused by $C$.
+
+We can repeat this process inductively recursively filling up the half of the space left at each iteration. 
+This means we can repeat the process in order to be arbitrarily close to 1. 
+Since we only have used scaled copies of $C$, the union of them is meager and of measure 1.
+Therefore the residual is of measure zero.
 
 \problem{29}
 
