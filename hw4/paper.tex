@@ -1,8 +1,8 @@
 \noindent\textbf{Real Analysis II Assignment 4 \hspace{\fill} Luis Berlioz}
 \problem{27}
-First, we detail the contruction of a Generalized Cantor Set of measure 1/2. These sets have measure:
+First, we detail the construction of a Generalized Cantor Set of measure 1/2. These sets have measure:
 $$m(C) = \prod_k (1-\alpha_k)$$
-Taking $\alpha_k= (2^k+2)^-1$, we get:
+Taking $\alpha_k= (2^k+2)^{-1}$, we get:
 \begin{align*}
 \prod_{k=1}^N \left( 1- \frac 1{2^k+2} \right) &= \frac 34 \cdots \frac{2^k+1}{2(2^{k-1} +1)}\frac{2^{k+1}+1}{2(2^{k} +1)}\frac{2^{k+2}+1}{2(2^{k+1} +1)} \cdots \frac{2^N+1}{2^N+2}\\
                                 &= \frac{2^N+1}{2^{N+1}} \to \frac 12
@@ -10,7 +10,7 @@ Taking $\alpha_k= (2^k+2)^-1$, we get:
 Starting with the interval [0,1]  we remove the \emph{open} middle segment of length $1/2^{2n}$. 
 The resulting set $C$ is closed because its the intersection of closed sets; thus it is measurable. 
 It is also nowhere-dense, since for any two points in $C$, the distance between them is greater than $1/2^{2k}$ for some $k$.
-And according to the definition, an open segment of this length necesarily was removed. 
+And according to the definition, an open segment of this length necessarily was removed. 
 
 Now we argue that the gaps of $C$ can be filled in with scaled down copies of $C$. 
 For convenience call $\frac 14 C$ the copy of $C$ scaled down by a factor of 1/4.
@@ -25,5 +25,69 @@ Since we only have used scaled copies of $C$, the union of them is meager and of
 Therefore the residual is of measure zero.
 
 \problem{29}
+\subsection*{Part (a)}
+$\vesp$ is a subspace of $\vespy$. To see this take any two elements $x,y\in \vesp$:
+$$\sum n|\alpha x(n)+ \beta y(n)| \leq \alpha\sum n|x(n)| +\beta \sum n|y(n)|<\infty$$
+Also, $x\in \vesp$ implies $x\in \vespy$:
+$$\v x\v = \sum |x(n)| \leq \sum n|x(n)|< \infty$$
+It is a \emph{proper} subset since $f(n)=1/n^2$ is an element of $\vespy$ but not of $\vesp$: 
+\begin{gather*}
+    \v f\v = \sum \frac 1{n^2} = \frac {\pi^2}{6} \\
+    \sum n\left| \frac 1{n^2}\right| = \sum \frac 1n = \infty
+\end{gather*}
+Finally, $\vesp$ is dense in $\vespy$: Take any $x\in \vespy$; then define the truncated sequence for $x$:
+$$x_n = x(1),x(2),\ldots,x(n), 0,0,\ldots$$
+We know $\v x\v = \sum | x(n)|<\infty$. Thus $\forall \epsilon>0$ there is an $N$ such that:
+$$\sum_{N+1}^\infty |x(n)| <\epsilon$$
+Therefore $\v x_N - x\v<\epsilon$.
 
+To be complete, $\vesp$ would have to be closed in $\vespy$. Being dense and proper at the same time, this is impossible.
+\subsection*{Part (b)}
+To show that $T$ is unbounded, we use the following sequence:
+\[x_n(k) = \begin{cases}
+    \frac 1{k^2}; &\quad k\leq n\\
+    0           ; &\quad k>n
+\end{cases}\]
+Note that $x_k \to x\in \vespy\backslash\vesp$ and, as was shown above, $\v Tx_n\v\to \infty$ while it checks that $\v x_n \v \to \frac{\pi^2}{6}$. Thus, $T$ is not bounded. 
+
+Now, we prove that $T$ is closed. Specifically, we show that if $(x,y)$ is a limit point of $\vesp\times T\vesp$, and $(x_n,Tx_n)\to (x,y)$; then $Tx=y$. Observe that no matter the norm we choose for $\vesp\times T\vesp$ we can always say:
+\begin{equation}\label{eq.1}
+   \v y - Tx_n\v = \sum |y(k) - Tx_n(k)| \to 0
+   \end{equation}
+
+For any $n\in \NN$,
+$$\v y - Tx\v \leq \v y - Tx_n\v + \v Tx_n - Tx\v$$
+Since we know ($\ref{eq.1}$), all that is left to show is that $\v Tx_n - Tx\v\to 0$.
+
+For any $\epsilon >0$, there exists $K\in \NN$ such that:
+$$\sum_{K+1}^\infty k|x_n(k)| \leq \epsilon/3 \text{ and } \sum_{K+1}^\infty k|x(k)| \leq \epsilon/3$$
+And there exists $N\in \NN$ (note $N$ depends on our choice of $K$ and $\epsilon$) such that:
+$$K^2\v x_n -x\v < \epsilon/3$$
+With this setup, we can conclude:
+\begin{gather*}
+    \v Tx_n - Tx\v = \sum_{k=1}^\infty k|x_n(k)-x(k)| \\
+    \leq \sum_{k=1}^K K\v x_n-x\v + \sum_{K+1}^\infty k|x_k(k)| + \sum_{K+1}^\infty k|x(k)|  < \epsilon
+\end{gather*}
+\subsection*{Part (c)}
+$S$ is bounded because for any $x\in \vespy$:
+$$\v S x\v = \sum \frac 1k |x(k)| \leq \sum |x(k)| = \v x\v$$
+And onto since for all $x\in \vesp$ we can take $y= Tx$ so that $ Sy = x$.
+
+Lastly, we show $S$ is not open. Let's suppose for a moment it is. Then if $B_1$ is the unit ball:
+$$B_r = \{f\in \vespy\from \v f \v <r\}$$
+There is an $r>0$ such that $B_r \cap \vesp \subset SB_1$. Then, using that $S$ is one-to-one:
+$$f\in B_1^C \implies Sf\notin SB_1 \implies Sf \notin B_r\cap \vesp$$
+But the $e_n(k)=\delta_{k,n}$ have norm 1 for all $n\in \NN$. And in spite of this, there exists $e_N$ such that $\v Se_N\v = \frac 1N <r$. Therefore $S$ is not open.
 \problem{32}
+We need to show that there are $C,c>0$ such that for all $x\in\vesp$
+$$c\v x\v_1 \leq \v x \v_2 \leq C\v x\v _1$$
+By hypothesis, $c=1$.
+
+Set $T_y\from (\vesp,\v\ \v_1) \to (\vesp,\v\ \v_2)$ defined by:
+$$T_yx= \v y \v_1 x$$
+Taking all $y\neq 0$ it checks that:
+$$\sup_{y\neq 0} \left\v \frac{y}{\v y\v_1} x\right\v_2<\infty$$
+Then by the Uniform Boundedness Principle:
+$$\sup_{y\neq 0} \left\v \frac y{\v y \v_1}\right\v_2 =C< \infty$$
+Therefore
+$$\v y\v_2 \leq C\v y\v_1$$
