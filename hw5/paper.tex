@@ -1,20 +1,20 @@
 \problem{Extra}
 We will show that the two given bases generate the same topology.
-First let $B(x,\delta)$ be any ball centered at an arbitrary $x$ and for any $\delta>0$. 
+First let $B(x,\delta)$ be any ball centered at an arbitrary $x=(x_k)$ and for any $\delta>0$. 
 Let $N$ be such that:
 $$\sum_{k=N+1}^\infty 2^{-k} < \delta/2$$
-Then:
+Then, we can also say that:
 $$\sum_{k=N+1}^\infty 2^{-k} \frac{d(x_k,y_k)}{1+d(x_k,y_k)}< \delta/2$$
 Need to show that $U_{\delta/N,N}\subset B(x,\delta)$.
 Take $y=(y_k) \in U_{\delta/N,N}$ then for $1\leq k \leq N$ we have $(1+d(x_k,y_k))^{-1}d(x_k,y_k)\leq d(x_k,y_k) < \delta/N$ thus:
 \begin{align*}
 \rho(x,y) &= \sum_{k=1}^N 2^{-k} \frac{d(x_k,y_k)}{1+d(x_k,y_k)} + \sum_{k=N+1}^\infty 2^{-k} \frac{d(x_k,y_k)}{1+d(x_k,y_k)} \\
-          &\leq \frac 12 \delta + \delta/2 = \delta
+          &< \frac 12 \delta + \delta/2 = \delta
 \end{align*}
 
 Secondly, let $U_{\epsilon, n}$ be any element of the base of a point $x=(x_k)$. We will show that:
-$$B(x,\frac{2^{-n}\epsilon}{1+\epsilon}) \subset U_{\epsilon, n}$$
-To do this, observe that if $y$ is such that:
+$$B\left(x,\frac{2^{-n}\epsilon}{1+\epsilon}\right) \subset U_{\epsilon, n}$$
+To do this, observe that if $y=(y_k)$ is such that:
 $$\rho(x,y)<\frac{2^{-n}\epsilon}{1+\epsilon}$$
 Then for $1\leq k \leq n$:
 $$2^{-k} \frac{d(x_k,y_k)}{1+d(x_k,y_k)} < \frac{2^{-n}\epsilon}{1+\epsilon}$$
