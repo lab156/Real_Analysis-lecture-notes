@@ -1,3 +1,37 @@
+\problem{34}
+\subsection*{Part (a)}
+Let $x_n \to 0$ as a sequence in the space $L_k^1[0,1]$.
+Then $\imath(x_n)=x_n$ also converges to $0$ in $C^{k-1}[0,1]$ simply because its norm also separates points.
+
+\subsection*{Part (b)}
+\problem{38}
+First we check that $T$ is a linear; let $\alpha,\beta$ be scalars, and $x,y\in \vesp$ then it checks:
+$$\lim_{n\to \infty} T_n(\alpha x+\beta y) = T(\alpha x+\beta y)$$
+Since each $T_n$ is linear and convergent we can conclude:
+$$T(\alpha x+\beta y)=\alpha T_nx +\beta T_n y \to \alpha Tx + \beta Ty$$
+Next to check that $T$ is bounded, we use tha Uniform Boundedness Principle.
+Note that $\{T_n \mid n\in\NN \} \subset L(\vesp, \vespy)$. 
+This implies that for any fixed  $x\in \vesp$, the set composed of $\{\v T_n x\v from n\in \NN\}$ is bounded.
+Finally this means that $\v T\v$ which has to be less than $\sup_{n}\v T_n\v$ is finite.
+
+\problem{41}
+Let $\BB=\{u_k\from k\in \NN\}$ be a basis of the vector space $\vesp$.
+Any finite subset of $\BB$ (namely $U$) spans a subspace that is:
+\begin{enumerate}
+    \item Finite dimensional 
+    \item Closed 
+    \item No-where dense. 
+\end{enumerate}
+To check the last one, note that any open ball around the origin contains some multiple of some $u_k \notin U$.
+This means that the span of $U$ has empty interior.
+
+By definition the elements of $\vesp$ are always finite linear combination; so:
+$$\vesp = \cup_{U\subset \BB} \spann U$$ 
+Where $U$ are \emph{U} subsets as above. 
+
+Let $\vespy$ be the completion of $\vesp$. 
+By the Baire Category Theorem, $\vespy\neq \vesp$.
+
 \problem{Extra}
 We will show that the two given bases generate the same topology.
 First let $B(x,\delta)$ be any ball centered at an arbitrary $x$ and for any $\delta>0$. 
