@@ -1,18 +1,27 @@
+\noindent\textbf{Real Analysis II Assignment 5 \hspace{\fill} Luis Berlioz}
 \problem{34}
 \subsection*{Part (a)}
 Let $x_n \to 0$ as a sequence in the space $L_k^1[0,1]$.
-Then $\imath(x_n)=x_n$ also converges to $0$ in $C^{k-1}[0,1]$ simply because its norm also separates points.
+Then, the inclusion map $\imath(x_n)=x_n$ also converges to $0$ in $C^{k-1}[0,1]$ simply because $\imath(0)=0$.
 
 \subsection*{Part (b)}
+To prove that $\imath \from (L_k^1[0,1],\v \ \v_L) \to (C^{k-1}[0,1],\v\ \v_C)$ is bounded (operator norm is equal to 1, by the way), we need to show that for all $f\in L_k^1[0,1]$,  $\v f \v_C \leq \v f\v_L$. This is equivalent to showing:
+$$\sum_{j=0}^{k-1} \v f^{(j)}\v_\infty \leq \sum_{j=0}^{k}\int | f^{(j)}|$$
+
+For $k=1$ note that the term $\int |f'|$ is the total variation of the function, since $f$ is assumed to be almost always differentiable and continuous. Then:
+$$\max|f| - \min |f| \leq \int |f'|$$
+Also, $\min|f|\leq \int |f|$; thus $\max |f| = \v f\v_\infty \leq \int |f| + \int |f'|=\v f\v_L$.
+
+
 \problem{38}
 First we check that $T$ is a linear; let $\alpha,\beta$ be scalars, and $x,y\in \vesp$ then it checks:
 $$\lim_{n\to \infty} T_n(\alpha x+\beta y) = T(\alpha x+\beta y)$$
 Since each $T_n$ is linear and convergent we can conclude:
 $$T(\alpha x+\beta y)=\alpha T_nx +\beta T_n y \to \alpha Tx + \beta Ty$$
-Next to check that $T$ is bounded, we use tha Uniform Boundedness Principle.
+Next, to check that $T$ is bounded, we use tha Uniform Boundedness Principle.
 Note that $\{T_n \mid n\in\NN \} \subset L(\vesp, \vespy)$. 
-This implies that for any fixed  $x\in \vesp$, the set composed of $\{\v T_n x\v from n\in \NN\}$ is bounded.
-Finally this means that $\v T\v$ which has to be less than $\sup_{n}\v T_n\v$ is finite.
+The convergence of $T_nx$ implies that for any fixed  $x\in \vesp$, the set composed of $\{\v T_n x\v \from n\in \NN\}$ is bounded.
+Finally this means that $\v T\v$ which has to be less or equal than $\sup_{n}\v T_n\v$ is finite.
 
 \problem{41}
 Let $\BB=\{u_k\from k\in \NN\}$ be a basis of the vector space $\vesp$.
@@ -20,19 +29,19 @@ Any finite subset of $\BB$ (namely $U$) spans a subspace that is:
 \begin{enumerate}
     \item Finite dimensional 
     \item Closed 
-    \item No-where dense. 
+    \item Nowhere dense. 
 \end{enumerate}
 To check the last one, note that any open ball around the origin contains some multiple of some $u_k \notin U$.
 This means that the span of $U$ has empty interior.
 
 By definition the elements of $\vesp$ are always finite linear combination; so:
-$$\vesp = \cup_{U\subset \BB} \spann U$$ 
-Where $U$ are \emph{U} subsets as above. 
+$$\vesp = \bigcup_{U\subset \BB} \spann U$$ 
+Where $U$ are \emph{finite} subsets as above. 
 
 Let $\vespy$ be the completion of $\vesp$. 
-By the Baire Category Theorem, $\vespy\neq \vesp$.
+By the Baire Category Theorem $\vespy$ cannot be the union of meager sets so $\vespy\neq \vesp$.
 
-\problem{Extra}
+\section*{Extra Problem}
 We will show that the two given bases generate the same topology.
 First let $B(x,\delta)$ be any ball centered at an arbitrary $x=(x_k)$ and for any $\delta>0$. 
 Let $N$ be such that:
