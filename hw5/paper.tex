@@ -2,7 +2,7 @@
 \problem{34}
 \subsection*{Part (a)}
 Let $x_n \to 0$ as a sequence in the space $L_k^1[0,1]$.
-Then, the inclusion map $\imath(x_n)=x_n$ also converges to $0$ in $C^{k-1}[0,1]$ simply because $\imath(0)=0$.
+Then, the inclusion map $\imath(x_n)=x_n$ also converges to $0$ in $C^{k-1}[0,1]$ simply because $\imath(0)=0$. By the Closed Graph Theorem, $\imath$ is bounded.
 
 \subsection*{Part (b)}
 To prove that $\imath \from (L_k^1[0,1],\v \ \v_L) \to (C^{k-1}[0,1],\v\ \v_C)$ is bounded (operator norm is equal to 1, by the way), we need to show that for all $f\in L_k^1[0,1]$,  $\v f \v_C \leq \v f\v_L$. This is equivalent to showing:
@@ -12,13 +12,14 @@ For $k=1$ note that the term $\int |f'|$ is the total variation of the function,
 $$\max|f| - \min |f| \leq \int |f'|$$
 Also, $\min|f|\leq \int |f|$; thus $\max |f| = \v f\v_\infty \leq \int |f| + \int |f'|=\v f\v_L$.
 
+Assuming the result for $k$, if $\min |f^{(k)}|=0$ then $\v f^{(k)}\v_\infty \leq \int|f^{(k+1)}|$. If it is the case where $m= \min |f^{(k)}|>0$; then we can establish the $k+1$ result for $g= f-\frac{m}{k!}x^k$. And then proceed using the properties of the norms.
 
 \problem{38}
 First we check that $T$ is a linear; let $\alpha,\beta$ be scalars, and $x,y\in \vesp$ then it checks:
 $$\lim_{n\to \infty} T_n(\alpha x+\beta y) = T(\alpha x+\beta y)$$
 Since each $T_n$ is linear and convergent we can conclude:
 $$T(\alpha x+\beta y)=\alpha T_nx +\beta T_n y \to \alpha Tx + \beta Ty$$
-Next, to check that $T$ is bounded, we use tha Uniform Boundedness Principle.
+Next, to check that $T$ is bounded, we use the Uniform Boundedness Principle.
 Note that $\{T_n \mid n\in\NN \} \subset L(\vesp, \vespy)$. 
 The convergence of $T_nx$ implies that for any fixed  $x\in \vesp$, the set composed of $\{\v T_n x\v \from n\in \NN\}$ is bounded.
 Finally this means that $\v T\v$ which has to be less or equal than $\sup_{n}\v T_n\v$ is finite.
