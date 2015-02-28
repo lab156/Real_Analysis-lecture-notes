@@ -1,0 +1,20 @@
+\problem{45}
+First,  define a seminorm on $C^\infty(\RR)$:
+$$p_m(f)= \sup_{x\in [-m,m]} \left\{ \frac{|f^{(k)}(x) |}{k!} \from k\in \NN \right\}\label{p_def}$$
+First, we check that $p_n$ is defined for every $f\in C^\infty(\RR)$ using the Cauchy Estimate for the $k-$th derivative:
+$$ |f^{(k)}(x) | \leq \frac{M_R k!}{R^k}$$
+In this case $R=2n$ and $M_R$ exist because $f$ in continuous and $[-m,m]$ is compact. 
+Then, the  $f^{(k)} $ will be bounded by:
+$$\frac{|f^{(k)}(x) |}{k!} \leq \frac{M_R}{(2m)^k}$$
+We conclude that the supremum in (\ref{p_def}) always exists.
+
+Now we can check that the functions $p_n(f)$ are in fact seminorms. 
+Nonnegativity, and Homogenuity, is garanteed because the supremum is taken from the absolute value of the $k-$th derivative of the function.
+For the triangle inequality, we check that:
+\begin{align*}
+p_n(f+g) & = \sup_{x\in [-n,n]} \left\{ \frac{|f^{(k)}(x) + g^{(k)}(x)  |}{k!} \from k\in \NN \right\}\\
+&\leq \sup_{x\in [-n,n]} \left\{ \frac{|f^{(k)}(x) |}{k!} +\frac{|g^{(k)}(x) |}{k!}  \from k\in \NN \right\}\\
+&\leq p_n(f) + p_n(g)
+\end{align*}
+
+
