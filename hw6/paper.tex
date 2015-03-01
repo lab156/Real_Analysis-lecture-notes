@@ -1,23 +1,33 @@
 \problem{45}
 First,  define a seminorm on $C^\infty(\RR)$:
 \begin{equation}
-p_m(f)= \sup_{x\in [-m,m]} \left\{ \frac{|f^{(k)}(x) |}{k!} \from k\in \NN \right\}\label{p.def}
+    p_{(j,k}(f)= \sup_{x\in [-j,j]} \left\{ \frac{|f^{(k)}(x) |}{k!}\right\} \label{p.def}
 \end{equation}
-First, we check that $p_n$ is defined for every $f\in C^\infty(\RR)$ using the Cauchy Estimate for the $k-$th derivative:
-$$ |f^{(k)}(x) | \leq \frac{M_R k!}{R^k}$$
-In this case $R=2m$ and $M_R$ exist because $f$ in continuous and $[-m,m]$ is compact. 
-Then, the  $f^{(k)} $ will be bounded by:
-$$\frac{|f^{(k)}(x) |}{k!} \leq \frac{M_R}{(2m)^k}$$
+First, we check that $p_{j,k}n$ is defined for every $f\in C^\infty(\RR)$.
+Indeed, this is the case because the supremum of a continuous function ($f^{(k)}$) is taken in compact set ($[-j,j]$).
 We conclude that the supremum in (\ref{p.def}) always exists.
 
-Now we can check that the functions $p_n(f)$ are in fact seminorms. 
+Now we can check that the functions $p_{j,k}(f)$ are in fact seminorms. 
 Nonnegativity, and Homogenuity, is garanteed because the supremum is taken from the absolute value of the $k-$th derivative of the function.
 For the triangle inequality, we check that:
 \begin{align*}
-p_m(f+g) & = \sup_{x\in [-m,m]} \left\{ \frac{|f^{(k)}(x) + g^{(k)}(x)  |}{k!} \from k\in \NN \right\}\\
-&\leq \sup_{x\in [-m,m]} \left\{ \frac{|f^{(k)}(x) |}{k!} +\frac{|g^{(k)}(x) |}{k!}  \from k\in \NN \right\}\\
-&\leq p_m(f) + p_m(g)
+p_{j,k}(f+g) & = \sup_{x\in [-m,m]} \left\{ \frac{|f^{(k)}(x) + g^{(k)}(x)  |}{k!} \right\}\\
+&\leq \sup_{x\in [-m,m]} \left\{ \frac{|f^{(k)}(x) |}{k!} +\frac{|g^{(k)}(x) |}{k!}  \right\}\\
+&\leq p_{j,k}(f) + p_{j,k}(g)
 \end{align*}
 
-Now we show that the family of seminorms defined before is compatible with the given definition of convergence. To this end, suppose that for all $k\in \NN$ and on all compact sets, $f^{(k)}_n \xrightarrow{unif.} f^{(k)}$. Then $\forall \epsilon >0, \ \forall k\in\NN,\ \forall m\in\NN,\ \exists N$ such that $n\geq N$ implies:
-$$\sup_{x\in [-m,m]} \left\{ \frac{\left| f_n^{(k)}(x) - f^{(k)}(x)\right|}{k!}\right\} < \epsilon\, k!$$
+Now we show that the family of seminorms defined before is compatible with the given definition of convergence. 
+Note that as a family of seminorms, $\{p_{j,k} \from j,k\in \NN\}$ defines a topology in which $f_n\to f$ iff (Theorem 5.14 part (b)):
+$$\forall j,k\in\NN\quad p_{j,k}(f_n-f)\to 0$$
+And, since for a fixed $k$ this is just the topology of uniform convergence in all compact set, we can conclude that 
+$$\forall k\in \NN ,\ f_n^{(k)}\xrightarrow{unif.}  f^{(k)}$$
+
+Lastly, we prove that $C^\infty(\RR)$ is complete under this topology.
+Let $(f_n)_{n=1}^{\infty}$ a be Cauchy sequence in the sense of the seminorms $p_{j,k}$.
+Fixing any $k$ implies that the $k-$derivatives converge uniformly to some function we call $g_k$.
+We will prove this by induction on the order of the derivative ($k\leq$).
+To see the base case, notice that $f_n\to g_0$ and $f_n' \xrightarrow{unif.} g_1$; thus, $g_0'=g_1$. 
+Next, if we assume that: 
+$$\frac{d^k g_0}{dx^k}=g_{k}$$ 
+Then again, using that  $f^{(k+1)}\xrightarrow{unif.}g_{k+1}$ we get that $g_k'=g_{k+1} $.
+Therefore the sequence $(f_n)_{n=1}^{\infty}$ converges in the sense of the seminorms $p_{j,k}$ to a function $g_0 \in C^\infty(\RR)$.
