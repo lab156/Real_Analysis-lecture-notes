@@ -1,0 +1,61 @@
+\noindent\textbf{Real Analysis II Assignment 7 \hspace{\fill} Luis Berlioz}
+\problem{55}
+\subpart{(b)}
+A unitary map $\phi \from \HH\to \HH'$ is invertible and invariant under inner product, i.e. $\forall x,y \in \HH$
+$$\inprod{\phi x}{\phi y} = \inprod xy$$
+As mentioned in the textbook, taking $x=y$ shows that $\phi$ is a isometry and it is always surjective (to its image).
+
+On the other hand, now assume that $\phi$ is a surjective isometry. 
+Surjectivity implies that $\forall w,z\in \HH'$ there exist $x,y\in \HH$ such that $w =\phi x$ and $z=\phi y$.
+Thus, for any couple of vectors in either $\HH$ or $\HH'$ we have by the polarization identity:
+$$\inprod{\phi x}{\phi y} = \frac 14\left( \v \phi(x+y) \v^2 - \v \phi(x-y) \v^2 + i\v \phi(x+iy) \v^2 - i\v \phi(x-iy) \v^2\right)$$
+Now we can use that  $\phi$ is an isometry:
+$$ = \frac 14\left( \v (x+y) \v^2 - \v (x-y) \v^2 + i\v (x+iy) \v^2 - i\v (x-iy) \v^2\right)= \inprod xy$$
+Injectivity for a linear map is equivalent to: $\phi x = 0 \iff x=0$; this is the case for any isometry since:
+$$\phi x = 0 \iff \v \phi x\v = 0 \iff \v x\v =0 \iff x=0$$
+Therefore $\phi$ is injective.
+
+\problem{59}
+As advised in the textbook, we follow closely the proof of Theorem 5.24. 
+A more direct proof is unlikely, since in an infinite dimensional Hilbert space bounded sets need not be compact.
+Let 
+$$\delta = \inf_{y\in K} \v y \v$$
+We assume that $\delta > 0$, thus $K\neq \emptyset$ and not contains 0.
+Also we assert there exists $\{y_n\from n\in \NN\}\subset K$ such that:
+$$\lim_n \v y_n \v = \delta$$
+Each $y_n$ can be taken  from the intersection of $K$  and a ball centered at the origin of radius greater than $\delta$. 
+This intersection is always nonempty or else the infimum is not $\delta$. 
+
+Using the paralellogram law:
+$$2\left( \v y_n \v^2 + \v y_m \v ^2 \right) = \v y_n - y_m \v^2 + \v y_n + y_m \v^2 $$
+Now we use the convexity of $K$ to guarantee that $\frac 12 (y_n + y_m)\in K$.  Then we have the  inequality:  $\v y_n + y_m \v\leq 2\delta$ and:
+$$\v y_n - y_m \v^2 \leq 2\v y_n \v^2 + 2\v y_m \v^2 - 4\delta^2$$
+Thus, $y_n$ is a Cauchy sequence. Calling the \emph{unique} limit $y$, observe that since $K$ is closed then $y\in K$.
+
+\section*{Extra Problem}
+\subpart{(a)}
+Since $\{ u_1,\ldots, u_n \}$ is an orthonormal basis, it is maximal, so adding an additional vector $u_{n+1}$ makes an linear dependent set.
+$$u_{n+1} = a_1 u_1 + \ldots + a_n u_n$$
+Since $u_{n+1}$ is arbitrary, we have shown any vector can be written as a finite linear combination. 
+Therefore $\{ u_1,\ldots, u_n \}$ is an algebraic basis of $\HH$.
+\subpart{(b)}
+First we can decompose any $x$ as:
+$$x = P_{\MM^\perp} x + P_M x$$
+Inside the space $\MM$ we can further decompose into the space spanned by  each $u_k$:
+$$x = P_{\MM^\perp} x + P_{u_1} x + P_{u_2} x \ldots +P_{u_n} x$$
+Since $x-\inprod{u_k}{x} u_k$ is orthogonal to $u_k$, then $P_{u_k} x = \inprod{u_k}{x} u_k$. Moreover:
+$$x= P_{\MM^\perp} x + \inprod{u_1}{x} u_1 +  \inprod{u_2}{x} u_2+\ldots + \inprod{u_n}{x} u_n$$
+Comparing this result and the first equation gives the result.
+
+\section*{Catch-up Midterm Problem}
+On problem 2, need to show that given conditions (i) and (ii) then $(x_n)\xrightarrow{weak} 0$.
+First, observe that for any $f\in \ell_1$ and  $\forall \epsilon >0$ there exists a natural number $K(f,\epsilon)$ such that:
+$$\sum_{k=K(f,\epsilon)}^\infty u(k) x_n(k)<\epsilon$$
+Also, since $\lim_n x_n(k) =0$ for all $k$; there is another natural number $N$ such that if $n\geq N$ then for any $1\leq k\leq K(f,\epsilon)$ we have:
+$$|x_n(k) | < \epsilon$$ 
+This means that if $M= \sup_n\v x_n \v_{c_0} $ then:
+\begin{align*}
+f(x_n) &= \sum_{k=1}^{K(f,\epsilon)-1} u(k) x_n(k) + \sum_{k=K(f,\epsilon)}^\infty u(k) x_n(k)\\
+       &\leq \v f\v_{\ell_1} \epsilon + M\epsilon
+\end{align*}
+Therefore, $\forall f\in \ell_1$, we have, $f(x_n)\to 0$ meaning that $(x_n)\xrightarrow{weak} 0$.
