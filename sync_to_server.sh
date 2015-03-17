@@ -1,4 +1,4 @@
-source ./course_info
+source ../course_info
 if [ -n "$SYNCTOSERVER" ]; then
     echo "......syncing.......";
     cp this_paper.pdf /srv/http/this_paper.pdf ;
