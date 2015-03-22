@@ -14,4 +14,4 @@ COURSESEMESTER='Spring 2015'
 #Sync the .pdf file with server
 #When working on a remote machine
 #Uncomment the variable to start syncing
-#SYNCTOSERVER=0
+SYNCTOSERVER=0
