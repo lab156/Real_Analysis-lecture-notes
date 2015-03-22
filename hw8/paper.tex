@@ -15,8 +15,23 @@ $$\RRR(T^*)^\perp = \NNN(T)$$
 Taking perpendicular complements on both sides and using that $(E^\perp)^\perp$ is the smallest closed subspace that contains $E$
 $$\overline{\RRR(T^*)}= \NNN(T)^\perp $$
 Note that the closure is necessary, as the range of even continuous linear operators may fail to be closed; to wit: take $T\from \ell_\infty \to \infty$ and $x\in \ell_\infty$ defined as:
-$$T(x) = \left( \frac{x_j}{j} \right)$$
+$$T(x) = \left( \frac{x_j}{j} \right)_1^\infty$$
 Then $\v T \v=1$ and the image is not closed\footnote{This example is from: http://math.stackexchange.com/questions/305503/what-are-the-range-and-the-norm-of-this-bounded-linear-operator}
 
 \subpart{(d)}
+Assuming $T$ is invertible, first let us suppose that $T^*=T^{-1}$. Then $\forall x,y\in \HH$ we have the following:
+$$\inprod{Tx}{Ty} = \inprod x{T^*Ty} = \inprod xy$$
+Thus, $T$ is unitary.
+
+Now let us suppose that $T$ is a unitary map (we are still assuming it is invertible). 
+We will show that $\v y - T^*Ty\v=0$ 
+\begin{gather*}
+\v y - T^*Ty\v^2=\inprod{y- T^*Ty}{y- T^*Ty}\\
+=\inprod yy - \inprod y{T^*Ty} - \inprod {T^*Ty}y + \inprod{T^*Ty}{T^*Ty}
+\end{gather*}
+Which is zero since a unitary map preserves the inner product. 
+Since exactly the same procedure can be done to prove that $\v TT^*y- y\v=0$; we conclude that $T^*=T^{-1}$.
+
+\problem{62}
+\subpart{(a)}
 
