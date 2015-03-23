@@ -1,3 +1,4 @@
+\noindent\textbf{Real Analysis II Assignment 8 \hspace{\fill} Luis Berlioz}
 \problem{58}
 \subpart{(c)}
 First we prove that $\RRR(T)^\perp = \NNN(T^*)$. Let $y\in \RRR(T)^\perp$; this means that for all $x\in \HH$ we have:
@@ -34,4 +35,29 @@ Since exactly the same procedure can be done to prove that $\v TT^*y- y\v=0$; we
 
 \problem{62}
 \subpart{(a)}
+We will follow the text's hint of modifying the proof of Theorem 2.26. 
+Our first step will be to show that $L^2[0,1] \subset L^1[0,1]$. If $f$ is any function in $L^2[0,1]$ we define:
+$$\bar f = \max\{ |f|,1\} \geq |f|$$
+We need to show that $\int |f| <\infty$, if $E$ is the set where $|f|$ is less than 1:
+$$\int |f| \leq \int \bar f = \int \chi_E + \int_{[0,1]\backslash E} |f| \leq \mu(E) + \int_{[0,1]\backslash E} |f|^2 <\infty$$
 
+Next we show that the same sequence $\{\phi_n\}$ used in the proof of Theorem 2.26 (which is the same used in Theorem 2.10) also works in this case. 
+We will use the fact that the $\{\phi_n\}$, being simple functions,  are all $L^2[0,1]$ integrable. 
+We will use the dominated convergence theorem with the sequence $|f-\phi_n|^2(x) \to 0$ and the bound:
+$$|f-\phi_n|^2\leq 4|f|^2$$
+Implying that:
+$$\int |f-\phi_n|^2 \to 0$$
+Thus, the convergence in the $L^1[0,1]$ metric implies convergence in $L^2[0,1]$. Therefore the $\phi_n$ are a sequence in $L^2[0,1]$ that converges to any $f\in L^2[0,1]$. Finally, as in the proof of Theorem 2.26, the continuous functions $C[0,1]$ can approximate all $\phi_n$. 
+
+\subpart{(b)}
+This follows from the result seen in class (Stone-Weistrass approximation theorem). The argument goes as follows: let $f\in L^2[0,1]$; there is a sequence $\{\phi_n\}$ of simple functions that converge to $f$. Additionally, there is a sequence in $C[0,1]$ converging to each $\phi_n$. Finally, there are sequences of polynomials converging to each of the objects above, and this set has $f$ as a limit point.
+
+\problem{63}
+\subpart{(a)}
+Let $x\in \HH$ be fixed but arbitrary, and say $\{u_n\}$ is an orthonormal set. By Bessel's inequality:
+$$\sum_{j=1}^\infty |\inprod x{u_n}|^2 < \infty$$
+This means that $\inprod x{u_n}\to 0$. Notice that the functionals $\inprod x\cdot$ are all elements in the dual.
+\subpart{(b)}
+Let $\{v_n\}$ be an orthonormal basis of $\HH$. Then $\{v_n\}\subset S$ and any $x\in B$ can be approximated with a sum of the form:
+$$\sum_{j=1}^n \inprod x{v_n}v_n \to x$$
+Any neighborhood of $x$ in the weak topology is represented with a list of vectors $B_{y_1,\ldots y_k}$. Now, taking the $y_i$ of unitary lengths gives that result.
