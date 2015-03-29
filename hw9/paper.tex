@@ -2,9 +2,21 @@
 \begin{enumerate}[(i)]
 \item To check that such a sequence exists, first note that for all $n\in \NN$ there exists $x_n\in \HH$ such that:
 $$\Big| |\inprod{Tx_n}{x_n}| - \v T\v\Big|<\frac 1n$$
-If this was not the case, then there would be a smaller upper bound for $\{ \inprod {Tx}x\from \v x\v=1\}$ contradicting the definition of the norm.
+If this was not the case, then there would be a smaller upper bound for $\{ \inprod {Tx}x\from \v x\v=1\}$ contradicting the step 1 of the handout.
 Next, since the closure of $TS=\{Tx\from \v x\v =1\}$ is compact (in the metric topology), we can assert that $(Tx_n)$ has a limit point $y$.
-Thus, there is a subsequence of $(Tx_n)$ that converges to $y$ in the norm.
+Thus, there is a subsequence of $(Tx_n)$ that converges strongly to $y$.
  
-\item  
+\item  According to the Banach-Alaoglu Theorem, and because $\HH=\HH^*=\HH^{**}$; we know  that the closed unit ball $B$ is weakly compact (I believe this is a good place to use the separability of $\HH$).
+    Thus, since all $x_n$ have norm 1, there is a subsequence that converges to say $a\in \HH$. 
+    To show that $\v a\v\leq 1$, notice that 
+    $$\inprod{x_n}{\frac a{\v a\v}}\leq \v x_n\v\, \v \frac a{\v a\v}\v \leq 1$$
+    and as $n\to \infty$:
+    $$\inprod{x_n}{\frac a{\v a\v}}\to \inprod{a}{\frac a{\v a\v}}=\v a\v\leq 1$$
+\item We know that $x_n\xrightarrow{weak} a$ means that $Tx_n\xrightarrow{weak} Ta$ by hint (ii) of problem 1 in the handout.
+    Finally note that:
+    \begin{gather*}
+        |\inprod{Tx_n}{x_n} - \inprod{Ta}a| \\
+        \leq |\inprod{Tx_n}{x_n} - \inprod{Ta}{x_n}|+ |\inprod{Ta}{x_n} - \inprod{Ta}a|
+    \end{gather*}
+    The weak convergences established above imply that as a sequence of real numbers $|\inprod{Tx_n}{x_n}| \to  |\inprod{Ta}a|$.
 \end{enumerate}
