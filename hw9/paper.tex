@@ -1,3 +1,4 @@
+\noindent\textbf{Real Analysis II Assignment 9 \hspace{\fill} Luis Berlioz}
 \problem{3}
 \begin{enumerate}[(i)]
 \item To check that such a sequence exists, first note that for all $n\in \NN$ there exists $x_n\in \HH$ such that:
@@ -6,7 +7,7 @@ If this was not the case, then there would be a smaller upper bound for $\{ \inp
 Next, since the closure of $TS=\{Tx\from \v x\v =1\}$ is compact (in the metric topology), we can assert that $(Tx_n)$ has a limit point $y$.
 Thus, there is a subsequence of $(Tx_n)$ that converges strongly to $y$.
  
-\item  According to the Banach-Alaoglu Theorem, and because $\HH=\HH^*=\HH^{**}$; we know  that the closed unit ball $B$ is weakly compact (I believe this is a good place to use the separability of $\HH$).
+\item  According to the Banach-Alaoglu Theorem, and because $\HH=\HH^*=\HH^{**}$; we know  that the closed unit ball $B$ is weakly compact (this is a good place to require the separability of $\HH$).
     Thus, since all $x_n$ have norm 1, there is a subsequence that converges to say $a\in \HH$. 
     To show that $\v a\v\leq 1$, notice that 
     $$\inprod{x_n}{\frac a{\v a\v}}\leq \v x_n\v\, \v \frac a{\v a\v}\v \leq 1$$
@@ -18,5 +19,30 @@ Thus, there is a subsequence of $(Tx_n)$ that converges strongly to $y$.
         |\inprod{Tx_n}{x_n} - \inprod{Ta}a| \\
         \leq |\inprod{Tx_n}{x_n} - \inprod{Ta}{x_n}|+ |\inprod{Ta}{x_n} - \inprod{Ta}a|
     \end{gather*}
-    The weak convergences established above imply that as a sequence of real numbers $|\inprod{Tx_n}{x_n}| \to  |\inprod{Ta}a|$.
+    The weak convergence of both $(x_n)$ and the $(Tx_n)$ imply that as a sequence of real numbers $|\inprod{Tx_n}{x_n}| \to  |\inprod{Ta}a|$.
 \end{enumerate}
+
+\problem{4}
+Let $\HH=\CC^2$ and let $T$ be the operator of rotation by 90$^\circ$.
+$$T=\begin{bmatrix}
+    0 & -1 \\
+    1 & 0 
+\end{bmatrix}$$
+If $x=[a+bi,c+di]\in \HH$ then:
+$$\inprod {Tx}x = (-c-di)(a-bi) + (a+bi)(c-di) =0$$
+
+\problem{5}
+First we show that $T$ is Hermitian. Let $f,g\in \HH$ then, by direct computation:
+$$\inprod {Tf}g = \int_0^1 (tf)g = \int_0^1 f(tg) = \inprod {f}{Tg}$$
+Next, observe that for $0\leq t\leq 1$, we have that $t^2f^2(t)\leq f^2(t)$. Thus:
+$$\v Tf\v^2 = \int_0^1 t^2f^2(t) \leq \int_0^1 f^2(t) = \v f\v$$
+This implies $\v T\v\leq 1$. Moreover, let $f_n\in \HH$ defined as:
+$$f_n(t) = \sqrt{n} \chi_{[1-1/n,1]}$$
+is shows that $\v T\v$ is exactly 1 because:
+\begin{align*}
+    \v T f_n\v &= \int_0^1 t^2 f_n^2 = \frac 13 t^3 (n-(1-1/n)^3)\\
+               &= 1- \frac 1{n} + \frac 1{n^2}
+\end{align*}
+That gets arbitrarily close to 1.
+
+Finally, $T$ does not reach its norm. If, for the sake of contradiction, we assume it does at the eigenvector $f\in \HH$ then the equation $t\,f(t) = \lambda f(t)$ implies that $f=0$ a.e. This is impossible because eigenvectors are nonzero.
