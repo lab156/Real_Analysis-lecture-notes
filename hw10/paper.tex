@@ -1,0 +1,72 @@
+\noindent\textbf{Real Analysis II Assignment 10 \hspace{\fill} Luis Berlioz}
+\problem{6.6}
+\subpart{(a)}
+Following the hint from the book we define:
+$$f_a(x)= x^{-a}|\ln(x)|$$
+We will be considering two different interval $[0,1]$ and $]1,\infty[$. To compute the integral more easily we do the  changes of variable $u=-\ln(x)$ and $u=\ln(x)$ respectively:
+\begin{gather*}
+\int_0^1 x^{-ap}|\ln(x)|^pdx = \int_0^\infty e^{(ap-1)u}u^{p}du\\
+\int_1^\infty x^{-ap}|\ln(x)|^pdx = \int_0^\infty e^{(1-ap)u}u^{p}du
+\end{gather*}
+The integrals above only converge if the exponent is negative since the function $u^p$ is of exponential order. Thus we get the following cases:
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+$f_a^p$ & $p<1/a$ & $p>1/a$ \\
+\hline
+[0,1] & Convergent & Divergent \\
+\hline
+[1,$\infty$[ & Divergent & Convergent\\
+\hline
+\end{tabular}
+\end{center}
+Taking $p_0= 1/a_0>0$ and $p_1=1/a_1>0$ the integral:
+$$\int \left( f_{a_0}\chi_{[0,1]}+f_{a_1}\chi_{[0,1]}\right)^p $$
+Converges when and only when $p_0<p<p_1$ since:
+$$\int \left( f_{a_1}\chi_{[0,1]}+f_{a_0}\chi_{[1,\infty]}\right)^p=  \int_{[0,1]} f_{a_1}^p + \int_{[1,\infty]} f_{a_0}^p$$ 
+\subpart{(b)}
+In order to obtain non-strict inequalities we define:
+$$g_a(x)= x^{-a}|\ln(x)|^{-2/a}$$
+To avoid the new singularity at $x=1$, we change the region of integration:
+$$\int \left( g_{a_1}\chi_{[0,1/e]}+g_{a_0}\chi_{[e,\infty]}\right)^p=  \int_{[0,1/e]} g_{a_1}^p + \int_{[e,\infty]} g_{a_0}^p$$ 
+Notice that in this case, when $p=1/a_0$ we get:
+$$\int_{[e,\infty]} g_{a_0}^p=\int_e^\infty x^{-1}\ln(x)^{-2}= 1$$
+Similarly, with $p=1/a_1$:
+$$\int_{[0,1/e]} g_{a_1}^p=\int_0^{1/e} x^{-1}\ln(x)^{-2}= 1$$
+The convergence for any other $p$ is the same a in part (a); thus the integral is finite when $p_0\leq p \leq p_1$.
+\subpart{(c)}
+Using part (b), just take $p_0= p = p_1$.
+
+\problem{6.8}
+\subpart{(a)}
+By Jensen's inequality and $x\mapsto \ln(x)$ being concave:
+$$\ln\int |f|^p \geq \int \ln|f|^p$$
+Changing the exponent from right to left:
+$$\frac 1p\ln\int |f|^p \geq \int \ln|f|$$
+
+
+\newpage
+\problem{6.9}
+Assuming that $\v f_n-f\v_p \to 0$ define the sets:
+$$E_{n,\epsilon} = \{ x\from |f_n(x) -f(x)| \geq \epsilon \}$$
+Then we have that:
+$$\int |f_n-f|^p \geq \int_{E_{n,\epsilon}}|f_n-f|^p\geq \epsilon m(E_{n,\epsilon})$$
+Letting any fix $\epsilon>0$ and $n\to \infty$ implies that $m(E_{n,\epsilon})\to 0$.
+
+We will check that the hypotheses of the dominated convergence theorem apply to $| f_n -f|^p$.
+First, $g\in L^p$ implies that $|g|^p \in L^1$; also:
+$$|f_n -f| \leq 2|g|$$
+Thus, $|f_n-f|^p\leq 2^p|g|^p\in L^1$.
+Secondly, using theorem 2.30, that $f_n \to f$ in measure implies that there is a subsequence $\{f_{n_j}\}\to f$ a.e.. Furthermore, this implies $|f_{n_j}-f|\to0$ a.e.
+Therefore the dominated convergence theorem implies that:
+$$\lim\int |f_{n_j}-f|^p = \int 0= 0$$
+
+\problem{6.12}
+Let $x,y\in L^p$ defined as:
+$$x=\chi_{[0,1]}\quad y = \chi_{[1,2]}$$
+Then, for any $p>0$ we have $\v x\v_p=1$ and $\v y \v_p=1$ and 
+$$\v x-y\v_p=\v x+y\v_p =2^{1/p}$$
+Then the parallelogram law gives:
+$$4= 2^{2/p}+2^{2/p}$$
+And this equation is valid only in the case where $p=2$.
+

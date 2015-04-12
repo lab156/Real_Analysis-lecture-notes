@@ -1,0 +1,17 @@
+=Sobolev Spaces=
+{{http://owpdb.mfo.de/photoNormal?id=3904}}
+
+_Source:_ Oberwolfach Photo Collection
+
+==A refined inner product==
+* The set of functions we'll be working on is $H_k$:
+    * $H_k \subset L^2(\mathbb{R}^n)$
+    * Derivatives of all orders less than $k$ are $L^2$.
+
+===Plancherel Theorem===
+if $f\in L^1\cap L^2$ then: 
+* the Fourier transform $\hat f\in L^2$
+* $\Vert f\Vert_2 = \Vert \hat f\Vert_2$
+
+===Riemann-Lebesgue Lemma===
+The Fourier transform of an $L^1$ function is continuous and vanishes at infinity.
