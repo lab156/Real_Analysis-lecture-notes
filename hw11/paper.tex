@@ -1,5 +1,60 @@
+\noindent\textbf{Real Analysis II Assignment 11 \hspace{\fill} Luis Berlioz}
 \problem{6.20}
 \subpart{(a)}
+First let us assume the hints (i),(ii) and (iii) and prove the main result. We need to show that for any $g\in L^q$ and as $n\to \infty$:
+$$\int (f_n-f)g\to 0$$
+Let $\epsilon>0$ then there exists $A\subset X$ be given as in (ii) then:
+\begin{equation}
+\int_{X\backslash A} \left| (f_n-f)g\right|\leq \epsilon \v f_n -f\v_p
+\end{equation}
+And $B\subset A$ as in (iii) then $\mu(A\backslash B)<\delta$ and so by (i):
+\begin{equation}
+\int_{A\backslash B} \left| (f_n-f)g\right|\leq \epsilon^{1/q}\v f_n-f\v_p
+\end{equation}
+On $B$ we have uniform convergence so we can pick $N\in \NN$ such that whenever $n\geq N$:
+\begin{equation}
+\int_{B} \left| (f_n-f)g\right|\leq \v g\v_q\v f_n -f\v_p<\epsilon \v g\v_q 
+\end{equation}
+The left hand sides of (1), (2) and (3) add up to $\int \left| (f_n-f)g\right|$ and the corresponding right sides show it can be made arbitrarily small.
 
+Just as a remark, notice that $f$ is indeed in $L^p$ because the $f_n$ form a Cauchy sequence that necesarily converges to an $L^p$ function.
+
+To show (i), take $\delta =\epsilon/\v g\v_q^q$ then if $\mu(E)<\delta$ we get:
+$$\int_E | g|^p \leq \v g\v^q_q \mu(E) < \epsilon$$
+
+In order to get (ii), and using $1<p<\infty$ we use the argument in the proof of Theorem 6.15 of the textbook, specifically in the second paragraph. 
+There the author shows that there is an \emph{increasing} sequence of sets of finite positive measure, namely $\{E_n\}$ such that (using the notation in the textbook) $\v g_n\v_q$  converges to the norm of $g$.
+In the case at hand we use that the support of $g$ is $\sigma$-finite as a result of being in $L^q$ ($q<\infty$).
+ Then take $A=E_k$ where $k$ is large enough so that:
+$$\int_{X\backslash E_k} |g|^q = \v g\v_q^q - \int_{E_k} |g|^q<\epsilon$$
+
+Finally, hint (iii) is a direct result of Egoroff's Theorem since $\mu(A)<\infty$ and $f_n \to f$ a.e. Therefore there exists $B\subset A$ such that $\mu(A\backslash B)<\epsilon$ and $f_n\xrightarrow{unif.} f$.
 \problem{6.21}
+First we assume that $f_n\xrightarrow{weak}f$. Observe that for any $a\in A$, the characteristic function $\chi_{\{a\}}$ is in $\ell_q(A)$. This implies that: 
+$$\int f_n \chi_{\{a\}} = f_n(a)$$
+Thus, again for all $a\in A$ and as $n\to \infty$:
+$$f_n(a) = \int f_n \chi_{\{a\}} \to \int f\chi_{\{a\}}=f(a)$$
+The boundednes of $\v f_n \v_p$ is a consequence of the always handy exercise 5.47, since the dual of (the Banach space) $\ell_p(A)$ is $\ell_q(A)$. 
+
+The converse is just the case proved in problem 6.20 above.
+
 \problem{6.22}
+\subpart{(a)}
+As seen in class:
+\[
+    \int_0^{1}\cos(2\pi nx)\cos(2\pi mx)\, dx=\begin{cases}
+        1/2 & \text{ if } m=n\\
+        0   & \text{ if } m\neq n
+\end{cases}\]
+And by problem 5.63 every orthonormal sequence in a Hilbert space converges weakly to zero.
+
+On the other hand, $f_n$ does not converge to zero a.e. because all the zeroes of the sequence are contained in a countable set of odd multiples of $\pi/2$ and nonconverging to zero on the rest of the space. And by the counterpositive of Theorem 2.30, it does not converge in measure either.
+
+\subpart{(b)}
+\begin{itemize}
+    \item $f_n \to f$ a.e. because $\forall 0<x\leq 1$ there exists $N\in\NN$ such that:
+        $$n\geq N \implies f_n(x)=0$$
+    \item $f_n\to f$ in measure since the set $\{ f_n(x)>0\}$ has measure $1/n$.
+    \item $f_n\nrightarrow f$ in $L^p$ to wit:
+        $$\v f_n\v_p^p = \int_0^1 |f_n(x)|^pdx = n^{p-1}\to \infty$$
+\end{itemize}
