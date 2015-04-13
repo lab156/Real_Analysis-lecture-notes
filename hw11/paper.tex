@@ -17,13 +17,13 @@ On $B$ we have uniform convergence so we can pick $N\in \NN$ such that whenever 
 \end{equation}
 The left hand sides of (1), (2) and (3) add up to $\int \left| (f_n-f)g\right|$ and the corresponding right sides show it can be made arbitrarily small.
 
-Just as a remark, notice that $f$ is indeed in $L^p$ because the $f_n$ form a Cauchy sequence that necesarily converges to an $L^p$ function.
+Just as a remark, notice that $f$ is indeed in $L^p$ because the $f_n$ form a Cauchy sequence that necessarily converges to an $L^p$ function.
 
 To show (i), take $\delta =\epsilon/\v g\v_q^q$ then if $\mu(E)<\delta$ we get:
 $$\int_E | g|^p \leq \v g\v^q_q \mu(E) < \epsilon$$
 
 In order to get (ii), and using $1<p<\infty$ we use the argument in the proof of Theorem 6.15 of the textbook, specifically in the second paragraph. 
-There the author shows that there is an \emph{increasing} sequence of sets of finite positive measure, namely $\{E_n\}$ such that (using the notation in the textbook) $\v g_n\v_q$  converges to the norm of $g$.
+There the author shows that there is an \emph{increasing} sequence of sets of finite positive measure, namely $\{E_n\}$ such that (using the notation in the textbook) $\v g_n\v_q$  converges to $\v g\v_q$.
 In the case at hand we use that the support of $g$ is $\sigma$-finite as a result of being in $L^q$ ($q<\infty$).
  Then take $A=E_k$ where $k$ is large enough so that:
 $$\int_{X\backslash E_k} |g|^q = \v g\v_q^q - \int_{E_k} |g|^q<\epsilon$$
@@ -34,7 +34,7 @@ First we assume that $f_n\xrightarrow{weak}f$. Observe that for any $a\in A$, th
 $$\int f_n \chi_{\{a\}} = f_n(a)$$
 Thus, again for all $a\in A$ and as $n\to \infty$:
 $$f_n(a) = \int f_n \chi_{\{a\}} \to \int f\chi_{\{a\}}=f(a)$$
-The boundednes of $\v f_n \v_p$ is a consequence of the always handy exercise 5.47, since the dual of (the Banach space) $\ell_p(A)$ is $\ell_q(A)$. 
+The boundedness of $\v f_n \v_p$ is a consequence of the always handy exercise 5.47, since the dual of (the Banach space) $\ell_p(A)$ is $\ell_q(A)$. 
 
 The converse is just the case proved in problem 6.20 above.
 
@@ -48,7 +48,7 @@ As seen in class:
 \end{cases}\]
 And by problem 5.63 every orthonormal sequence in a Hilbert space converges weakly to zero.
 
-On the other hand, $f_n$ does not converge to zero a.e. because all the zeroes of the sequence are contained in a countable set of odd multiples of $\pi/2$ and nonconverging to zero on the rest of the space. And by the counterpositive of Theorem 2.30, it does not converge in measure either.
+On the other hand, $f_n$ does not converge to zero a.e. because all the zeroes of the sequence are contained in a countable set of odd multiples of $\pi/2$ and non-converging to zero on the rest of the space. And by the counterpositive of Theorem 2.30, it does not converge in measure either.
 
 \subpart{(b)}
 \begin{itemize}
