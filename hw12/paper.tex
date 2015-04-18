@@ -1,0 +1,20 @@
+\problem{6.2}
+\subpart{(c)}
+If we assume that $\v f_n - f\v_\infty\to 0$, then for all $\epsilon>0$ there exists $N\in \NN $ such that for all $n\geq N$:
+$$\v f_n - f\v_\infty < \epsilon$$
+This is the same as saying:
+$$\inf_{a\geq 0}\left \{ a\from \mu\{ x\from | f_n(x) - f(x)| > a\}=0\right\}<\epsilon$$
+In particular this means that for $n\geq N$:
+$$\mu\{ x\from |f_n(x) - f(x)|\geq  \epsilon \}=0$$
+Even though the measure of the set is 0 for all $n\geq N$, the sets might change completely as we change $n$ so we have to take:
+$$H(\epsilon) =\bigcup_N^\infty  \{ x\from |f_n(x) - f(x)|\geq  \epsilon \}$$
+Observe that $H(\epsilon)$ is still of measure 0. 
+Moreover, take $E^C = \cup_{k=1}^\infty H(1/k)$ by the same reason as before, $\mu(E^C)=0$.
+
+Next we argue that $f_n\convu f$ on $E$. 
+For any $\epsilon >0$ take $\epsilon > 1/k$; by the argument above, there is an $N\in \NN$ such that for $n\geq N$:
+$$H(1/k)= \bigcup_N^\infty  \{ x\from |f_n(x) - f(x)|\geq  \epsilon \}\subset E^C$$
+Therefore, $\forall x\in E$ it must be the case that $|f_n(x) -f(x)| < \epsilon$.
+
+Conversely, using the same setting as in the textbook and in the hints:
+$$\v f_n -f\v_\infty \leq \v (f_n -f) \chi_E\v_u\to 0$$ 
