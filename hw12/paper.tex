@@ -20,4 +20,29 @@ Conversely, using the same setting as in the textbook and in the hints:
 $$\v f_n -f\v_\infty \leq \v (f_n -f) \chi_E\v_u\to 0$$ 
 
 \subpart{(d)}
-If $f\in L^\infty$ then $\v f\v_\infty <\infty$ and this means that $f$ is in the same equivalence class with a bounded function $g$. Theorem 2.10 in the textbook applies to $g$ and says that there exists a sequence of simple funtions $\phi_k$ such that $\phi_k \convu g$. By part (c) proven above, this implies that $\v \phi_k - f\v_\infty\to 0$.
+If $f\in L^\infty$ then $\v f\v_\infty <\infty$ and this means that $f$ is in the same equivalence class with a bounded function $g$. 
+Theorem 2.10 in the textbook applies to $g$ and says that there exists a sequence of simple funtions $\phi_k$ such that $\phi_k \convu g$. 
+By part (c) proven above, this implies that $\v \phi_k - f\v_\infty\to 0$.
+
+\problem{6.32}
+Given that $K\in L^2(\mu\times \nu)$ we can assert that $|K|^2\in L^1(\mu\times \nu)$. 
+Then Fubini-Tonelli applies to $|K|^2$ and in particular, we get that $|K_x|^2\in L^1(\nu)$ for a.e. $x\in X$.
+
+Next, we use that $f\in L^2(\nu)$ and thus for a.e. $x\in X$: 
+$$|K_x f| \leq \max\{|K_x|^2,|f|^2\}$$
+And this means that $Tf(x) = \int |K(x,y) f(y)| d\nu(y)$ exists for a.e. $x\in X$.
+
+Finally, observe that:
+\begin{align}
+\int \left| \int K_x f\,d\nu \right|^2 d\mu &\leq \int \left( \int |K_x f|\,d\nu \right)^2 d\mu\\
+& \leq \int \v K_x\v_2^2 \v f\v_2^2 \, d\mu \label{ineq.2}
+\end{align}
+We get (\ref{ineq.2}) because $K_x, f\in L^2$.
+At this point it is possible to flip the integral corresponding to $\v K_x\v_2 $ so we get:
+ $$\int \left| \int K_x f\,d\nu \right|^2 d\mu \leq \v f\v_2^2\int | K(x,y)|^2\, d(\mu\times \nu) $$
+And taking square roots of both sides:
+$$\v Tf\v_2 \leq \v f\v_2\v K\v_2$$
+Which is the result we want.
+
+\problem{8.13}
+
