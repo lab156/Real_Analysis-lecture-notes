@@ -1,0 +1,47 @@
+\noindent\textbf{Real Analysis II Assignment 13 \hspace{\fill} Luis Berlioz}
+\problem{7.17}
+We use that $X$ and thus $\mu$ is inner regular to establish that   
+$$\infty = \mu(X) = \sup\left\{ \mu (K) \from K\subset X \right \}$$
+Where the sets $K$ are compact. Then there is a sequence of compact sets $K_n$ such that:
+\begin{itemize}
+\item $\mu(K_1) \geq 3$
+\item $\mu( K_{n+1} ) \geq 3\mu (K_n)$
+\item It is clear that this implies that $\mu(K_n)\geq 3^n$.
+\end{itemize}
+Since the $K_n$ are compact, $\mu$ is outer regular on them. This implies there are open sets $U_n\supset K_n$ of finite measure so that we can further define $f_n\prec U_n$. Additionally we require that $f_n(K_n) =\{1\}$ and that $f_n \in C_c(X)$. This last condition is possible because $X$ is LHC. 
+
+We assert that $f=\sum_n 2^{-n} f_n$ is the function that we want. Indeed observe that:
+$$f(x) = \sum_{n=1}^\infty 2^{-n} f_n(x) \leq 1$$
+Also it is the limit of a sequence in $C_c(X)$ converging \emph{uniformly} and thus it has to converge to an element in $C_0(X)$.
+The integral of $f$ is unbounded:
+$$\int \sum_{n=1}^N 2^{-n} f_n(x)\geq   \int 2^{-N}\chi_{K_N}=\left( \frac 32\right)^N$$
+To justify the last inequality observe that in worst-case scenario, the $K_n$ are a nested sequence, and thus we cannot take the integral to be any larger.
+
+Lastly, this implies that every Radon measure is bounded since by the counter positive: $\int f \, d\mu <\infty \implies \mu(X)<\infty$.
+
+\problem{7.20}
+\subpart{(a)}
+According to page 25 of the textbook with $f(x) = \mu(\{x\})$ we get that $\Phi(\mu)$ is the evaluation of all of $X$ in a measure that is: 
+\begin{description}
+    \item[semifinite] in the case where $\mu(\{x\})<\infty$ for all $x\in X$.
+    \item[$\sigma-$finite] iff $\mu(\{x\})\neq0$ for only a countable subset of $X$.
+\end{description}
+Since all individual points are compact then $\mu(\{x\})<\infty$. Also using corollary 0.20 in the textbook, and since for all $\mu \in M(X)$ we can decompose it into four positive measures, we conclude that the set:
+$$E= \left\{ x \from \mu_i(\{x\})>0 \text{ where } 1\leq i \leq 4\right \}$$
+Is countable, moreover since $\mu$ is finite and complex:
+$$\mu(E) = \sum_{x\in E} \mu(\{x\})$$
+Converges absolutely. Therefore $\Phi$ is defined without ambiguities on all $M(X)$.
+
+If we assume that $\mu\in M(X)$ is nonzero, then there exists some $x_0\in X$ such that $\mu(\{x_0\})\neq 0$. We use this property to cause a contradiction when we also assume that the embedding:
+$$\imath \from C_0(X) \to C_0(X)^{**}$$ 
+Contains $\Phi$.  To show this, observe that  if $\delta_{x_0}$ is the point mass or Dirac's measure also defined in page 25. If we assume for the sake of contradiction that $\imath(f)= \Phi$ for some $f\in C_0(X)$, then:
+$$1=\Phi(\delta_{x_0}) = \int f \, d\delta_{x_0} = f(x_0) $$
+Thus we can define $f(x) =1$ for all $x\in X$ in this same way. Finally, this implies that:
+$$0=\Phi(\mu)= \int f \, d\mu = \int 1\, d\mu = |\mu|(X) \neq 0$$
+Since we are assuming the $\mu$ is nonzero. The contradiction is imminent and thus $\Phi\notin \imath(C_0(X))$.
+
+\problem{7.22}
+If we assume that $f_n \convw f$, then we use again (Problem 5.47(b)) to establish that $f_n$ is bounded. Moreover, the pointwise convergence is given by the Dirac's measure like so:
+$$f_n(x) = \int f_n \, d\delta_x \to \int f\, d\delta_x= f(x)$$
+On the other hand, the \textit{if} part is given by the dominated convergence theorem since for all $n\in \NN$ the sequence $f_n$ is bounded by the integrable function $g$ defined like in the solution to the midterm exam. 
+
